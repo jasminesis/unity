@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :schedules
 
   get '/games/add/:id' => 'games#add', as: 'game'
+  get '/games/remove/:id' => 'games#remove', as: 'remove_game'
   resources :games
 
 
