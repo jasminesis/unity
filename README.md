@@ -8,6 +8,7 @@
 ### How to run the test suite
 
 * Database initialization
+
 Run the migrations again
 ```
 bundle install
@@ -16,7 +17,7 @@ rails db:migrate
 ```
 OR
 
-Load the schema file (check if there is one first!!)
+Load the schema file (check if there is one first!)
 ```
 rails db:schema:load
 ```
