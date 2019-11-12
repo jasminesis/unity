@@ -25,11 +25,20 @@ ActiveRecord::Schema.define(version: 2019_11_11_101223) do
   end
 
   create_table "games", force: :cascade do |t|
-    t.string "game_name"
-    t.string "game_description"
-    t.string "game_image"
+    t.string "name"
+    t.string "description"
+    t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "games_users", force: :cascade do |t|
+    t.bigint "user_id"
+    t.integer "game_id"
+    t.string "game_rank"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_games_users_on_user_id"
   end
 
   create_table "schedules", force: :cascade do |t|
@@ -46,15 +55,6 @@ ActiveRecord::Schema.define(version: 2019_11_11_101223) do
     t.datetime "updated_at", null: false
     t.index ["schedule_id"], name: "index_schedules_users_on_schedule_id"
     t.index ["user_id"], name: "index_schedules_users_on_user_id"
-  end
-
-  create_table "user_games", force: :cascade do |t|
-    t.bigint "user_id"
-    t.integer "game_id"
-    t.string "game_rank"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_user_games_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -78,5 +78,5 @@ ActiveRecord::Schema.define(version: 2019_11_11_101223) do
   end
 
   add_foreign_key "friends", "users"
-  add_foreign_key "user_games", "users"
+  add_foreign_key "games_users", "users"
 end

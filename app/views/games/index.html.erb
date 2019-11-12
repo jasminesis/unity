@@ -5,14 +5,20 @@
 <div class="card-columns d-inline-block">
     <% @games.each do |game| %>
       <div class="card text-center" style="width: 18rem;">
-        <img class="card-img-top" src=<%= game.game_image %> alt=<%= game.game_name %>>
+        <img class="card-img-top" src=<%= game.image_url %> alt=<%= game.name %>>
         <div class="card-body">
-          <h3 class="card-title"><%= game.game_name %></h3>
-          <%= link_to "More", game_path(game), :class => "btn btn-primary" %>
+          <h3 class="card-title"><%= game.name %></h3>
+          <% p"////////////////////////////////"%>
+          <% if game.users.select{|x| x.id == current_user.id}.length >0  %>
+          <%= link_to "Remove from Favs", game_path(game), :class => "btn btn-primary" %>
+          <% else %>
+          <%= link_to "Add to Favs", game_path(game), :class => "btn btn-primary" %>
+          <% end %>
+
         </div>
         <div class="card-footer">
           <div>
-            <small class="text-muted"><%= game.game_description %></small>
+            <small class="text-muted"><%= game.description %></small>
           </div>
         </div>
       </div>

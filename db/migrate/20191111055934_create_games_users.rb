@@ -1,6 +1,6 @@
-class CreateUserGames < ActiveRecord::Migration[5.2]
+class CreateGamesUsers < ActiveRecord::Migration[5.2]
   def change
-    create_table :user_games do |t|
+    create_table :games_users do |t|
       t.references :user, foreign_key: true
       t.integer :game_id
       t.string :game_rank

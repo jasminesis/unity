@@ -61,6 +61,19 @@ class GamesController < ApplicationController
     end
   end
 
+  def add
+    # @game = Game.add(game_params)
+    # @game = Game.find(params[:id])
+    @game_user = GamesUser.new(:user_id => current_user.id, :game_id => params[:id])
+
+    if @game_user.save
+      redirect_to games_path
+    else
+      redirect_to games_path
+    end
+  end
+
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
