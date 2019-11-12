@@ -21,7 +21,7 @@
           </div>
         </div>
       </div>
-  <% if user_signed_in?%>
+  <% if current_user.admin?%>
     <table>
     <thead>
     <tbody>
@@ -41,6 +41,6 @@
 
 <br>
 
-<% if user_signed_in?%>
+<% if current_user.admin?%>
   <%= link_to 'New Game', new_game_path %>
 <% end %>
