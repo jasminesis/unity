@@ -29,13 +29,14 @@
         <li class="nav-item">
         <% if user_signed_in?%>
           <%= link_to 'log out', destroy_user_session_url, :class => "nav-link", method: :delete  %>
-          <% else %> 
+          <% else %>
           <%= link_to 'User log in', new_user_session_url,{:class => "nav-link"}  %>
                <% end %>
           </li>
+
         </ul>
         <% if user_signed_in?%>
-        Welcome back <%= current_user.email %>
+        <strong>Welcome back, <%= current_user.username %>!</strong>
         <% end %>
 		  </div>
 		</nav>

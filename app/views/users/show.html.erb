@@ -1,0 +1,10 @@
+<h1><%= @user.username %></h1>
+<%if @myself%>
+	<p>Welcome back</p>
+<% else %>
+	<%if @relationship.length > 0 %>
+		<%= link_to "Add friend", friend_path%>
+	<% else %>
+		<p>Delete friend</p>
+	<% end %>
+<% end %>
