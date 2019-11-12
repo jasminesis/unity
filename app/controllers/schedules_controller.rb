@@ -16,3 +16,7 @@ class SchedulesController < ApplicationController
   end
 
 end
+
+def schedule_params
+  params.require(:schedule).permit(:event, :start_time, :user_ids => [])
+end
