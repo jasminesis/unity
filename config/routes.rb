@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  get 'freetimes/index'
+  get 'freetimes/new'
+  get 'freetimes/show'
+  get 'freetimes/edit'
   devise_for :users, controllers: { sessions: 'user/sessions' }
 
   resources :schedules

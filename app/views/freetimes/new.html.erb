@@ -1,0 +1,23 @@
+<h1 class="display-4">Choose free time slots</h1>
+<%= Date.today.strftime() %></h1>
+
+<%= d = DateTime.now %></h1>
+
+
+
+<div class="form-check">
+	<%= form_with model: @freetime, class: "form-check-input" do |f| %>
+	<%= f.check_box
+
+
+	<%= check_box_tag(:pet_dog) %>
+	<%= label_tag(:pet_dog, d.hour) %>
+	<%= check_box_tag(:pet_cat) %>
+	<%= label_tag(:pet_cat, "I own a cat") %>
+</div>
+
+
+<%= f.text_field :title %>
+<%= f.text_area :body, size: "60x12" %>
+<%= f.submit "Create" %>
+<% end %>
