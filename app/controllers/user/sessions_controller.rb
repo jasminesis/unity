@@ -10,16 +10,17 @@ class User::SessionsController < Devise::SessionsController
 
   # POST /resource/sign_in
   def create
+    super
     @user = User.where(email: params["user"]["email"])
     @user.update(online_status_params)
-    render plain: @user.inspect
-    # super
-
   end
 
   # DELETE /resource/sign_out
   def destroy
+    @user = User.find(current_user.id)
+    @user.update(:online_status => 'false')
     super
+
   end
 
   private
