@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 gem 'devise'
 gem 'simple_calendar', '~> 2.3'
-gem 'bootstrap', '~> 4.1.0'
+gem 'bootstrap', '~> 4.3.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
