@@ -2,7 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .simple-calendar {
-	.day {}
+	.day {
+		background: white;
+	}
 
 	.wday-0 {}
 
@@ -19,19 +21,22 @@
 	.wday-6 {}
 
 	.today {
-		background: rgb(232, 169, 232)
+		background: #00aced;
 	}
 
 	.past {}
-
 
 	.future {}
 
 	.start-date {}
 
-	.prev-month {}
+	.prev-month {
+		background: #c0deed;
+	}
 
-	.next-month {}
+	.next-month {
+		background: #c0deed;
+	}
 
 	.current-month {}
 
