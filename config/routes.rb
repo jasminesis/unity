@@ -4,6 +4,7 @@ Rails.application.routes.draw do
 
   resources :schedules
 
+  get '/games/add/:id' => 'games#add', as: 'game'
   resources :games
 
 
