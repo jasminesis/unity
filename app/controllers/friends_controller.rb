@@ -4,7 +4,13 @@ class FriendsController < ApplicationController
   def create
     @current_id = current_user.id
     @user_id = params["id"]
-    render plain: "hi"
+
+    @relationship = Friend.new(:user_id => @current_id, :friend_user_id => @user_id, :status => 'added')
+    if @relationship.save
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def destroy
