@@ -64,9 +64,9 @@ class GamesController < ApplicationController
   def add
     # @game = Game.add(game_params)
     # @game = Game.find(params[:id])
-    @user_game = UserGame.new(:user_id => current_user.id, :game_id => params[:id])
+    @game_user = GamesUser.new(:user_id => current_user.id, :game_id => params[:id])
 
-    if @user_game.save
+    if @game_user.save
       redirect_to games_path
     else
       redirect_to games_path
