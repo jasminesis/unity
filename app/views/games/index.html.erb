@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Games</h1>
+
+<div class="card-columns d-inline-block">
+    <% @games.each do |game| %>
+      <div class="card text-center" style="width: 18rem;">
+        <img class="card-img-top" src=<%= game.game_image %> alt=<%= game.game_name %>>
+        <div class="card-body">
+          <h3 class="card-title"><%= game.game_name %></h3>
+          <%= link_to "More", game_path(game), :class => "btn btn-primary" %>
+        </div>
+        <div class="card-footer">
+          <div>
+            <small class="text-muted"><%= game.game_description %></small>
+          </div>
+        </div>
+      </div>
+  <% if user_signed_in?%>
+    <table>
+    <thead>
+    <tbody>
+    <tr>
+    <th colspan="3"></th>
+    </tr>
+    </thead>
+    <td><%= link_to 'Show', game %></td>
+    <td><%= link_to 'Edit', edit_game_path(game) %></td>
+    <td><%= link_to 'Destroy', game, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tbody>
+    </table>
+  <% end %>
+<% end %>
+
+</div>
+
+<br>
+
+<% if user_signed_in?%>
+  <%= link_to 'New Game', new_game_path %>
+<% end %>
