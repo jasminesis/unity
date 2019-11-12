@@ -1,2 +1,11 @@
-<h1>Schedules#show</h1>
-<p>Find me in app/views/schedules/show.html.erb</p>
+<h1 class="display-4"><%= @schedule.event %></h1>
+
+<p>
+	<%= @schedule.start_time %>
+	with
+
+	<%= @schedule.user_ids do |id| %>
+	<% id %>
+	<% end %>
+
+</p>
