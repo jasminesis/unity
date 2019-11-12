@@ -5,7 +5,7 @@ class SchedulesController < ApplicationController
   end
 
   def new
-    
+
   end
 
   def create
@@ -13,10 +13,10 @@ class SchedulesController < ApplicationController
       
     @schedule.user = current_user
   
-    if @schedule.save
+    if @schedule.save!
       redirect_to @schedule
-    else
-      render plain: "Failed"
+    # else
+      # render plain: "Failed"
       # render 'new'
     end
   end
