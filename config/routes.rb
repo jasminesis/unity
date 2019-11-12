@@ -18,4 +18,7 @@ Rails.application.routes.draw do
   get '/users/:id/edit' => 'users#edit', as: 'edit_user'
   patch '/users/:id' => 'users#update'
   delete '/users/:id' => 'users#destroy'
+
+  get '/users/add/:id' => 'friends#create'
+  delete '/users/delete/:id' => 'friends#destroy'
 end

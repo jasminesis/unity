@@ -13,7 +13,6 @@ class User::RegistrationsController < Devise::RegistrationsController
   def create
     super
     @user = User.where(email: params["user"]["email"])
-    byebug
     @user.update(online_status_params)
   end
 
