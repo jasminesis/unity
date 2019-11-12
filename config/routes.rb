@@ -18,5 +18,6 @@ Rails.application.routes.draw do
   patch '/users/:id' => 'users#update'
   delete '/users/:id' => 'users#destroy'
 
-  get '/friends'
+  get '/users/add/:id' => 'friends#create'
+  delete '/users/delete/:id' => 'friends#destroy'
 end

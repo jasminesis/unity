@@ -12,7 +12,7 @@ class UsersController < ApplicationController
     if @user_id == @current_id
       @myself = "Myself"
     else
-      @relationship = Friend.where("(user_id = ? AND friend_user_id = ?) OR (user_id = ? AND friend_user_id = ?)", @user, @current_id, @current_id, @user)
+      @relationship = Friend.where("(user_id = ? AND friend_user_id = ?) OR (user_id = ? AND friend_user_id = ?)", @user_id, @current_id, @current_id, @user_id)
     end
   end
 end
