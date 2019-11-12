@@ -74,6 +74,19 @@ class GamesController < ApplicationController
   end
 
 
+  def remove
+    # @game = Game.add(game_params)
+    # @game = Game.find(params[:id])
+    # @game_user = GamesUser.new(:user_id => current_user.id, :game_id => params[:id])
+    @relationship = GamesUser.where(user_id: current_user.id, game_id: params[:id])
+    @relationship[0].destroy
+    # render plain: @relationship.inspect
+      respond_to do |format|
+        format.html { redirect_to games_url, notice: 'Game was successfully removed.' }
+        format.json { head :no_content }
+      end
+    end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_game
