@@ -15,9 +15,3 @@ Game.create(game_name: "RoBlox", game_description: "Roblox is essentially a vast
 Game.create(game_name: "Minecraft", game_description: "The game allows players to build with a variety of different blocks in a 3D procedurally generated world, requiring creativity from players.", game_image: "https://upload.wikimedia.org/wikipedia/en/5/51/Minecraft_cover.png")
 Game.create(game_name: "PUBG PlayerUnknown’s Battleground", game_description: "PLAYERUNKNOWN'S BATTLEGROUNDS is a last-man-standing shooter being developed with community feedback.", game_image: "https://images.g2a.com/newlayout/323x433/1x1x0/0017f67ada95/59e60aeaae653a34fe0e9633")
 Game.create(game_name: "Fifa 2020", game_description: "FIFA 20 is a football simulation video game published by Electronic Arts as part of the FIFA series.", game_image: "https://lh3.googleusercontent.com/tjFx_uPUU3sOZxujIupK-DHCmJwbhBzUse6c80tTSqeSLeNILqHm7xo6uaEXrEEFm-aQkvFnS5BZmZhE5CRCqTgm")
-
-
-user = User.new
-user.email = 'calvin@klein.com'
-user.encrypted_password = '$2a$11$a0HzLaCgbrLH3KJpus.eZOwumpYO89r98wX/sIadq0E0UOpsy0Ece'
-user.save!
