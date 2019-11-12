@@ -5,15 +5,22 @@ class User::RegistrationsController < Devise::RegistrationsController
   # before_action :configure_account_update_params, only: [:update]
 
   # GET /resource/sign_up
-  # def new
-  #   super
-  # end
+  def new
+    super
+  end
 
   # POST /resource
-  # def create
-  #   super
-  # end
+  def create
+    super
+    @user = User.where(email: params["user"]["email"])
+    byebug
+    @user.update(online_status_params)
+  end
 
+  private
+    def online_status_params
+      params.require(:user).permit(:online_status, :username)
+    end
   # GET /resource/edit
   # def edit
   #   super
