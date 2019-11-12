@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Ruby Version => 2.5.1
 
-Things you may want to cover:
-
-* Ruby version
-- Ruby Version 2.5.1
-
-* System dependencies
-
-* Configuration
-
-* Database
+### Database
 - Merge conflicts can occur in your schema file when two branches modify schema. Delete the schema file while merging branches in github. Run rails db:migrate to regenerate the schema file. 
 
+### How to run the test suite
+
 * Database initialization
-
-* How to run the test suite
-
 Run the migrations again
 ```
 bundle install
@@ -31,9 +20,11 @@ Load the schema file (check if there is one first!!)
 ```
 rails db:schema:load
 ```
+* System dependencies
+
+* Configuration
 
 * Services (job queues, cache servers, search engines, etc.)
 
 * Deployment instructions
 
-* ...
