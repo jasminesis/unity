@@ -4,11 +4,15 @@
 
 	<p>
 		<%= @schedule.start_time %>
+
+		<% if @schedule.users.length > 0 %>
+
 		with
 
-		<%= @schedule.user_ids do |id| %>
-		<% id %>
+		<% @schedule.users.each do |users| %></a>
+		<%= users.username %>
 		<% end %>
 
+		<% end %>
 	</p>
 </div>
