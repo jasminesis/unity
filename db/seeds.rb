@@ -31,7 +31,7 @@ Friend.create!([
 
 Games_user.create!([
   {user_id: 1, game_id: 2, status: "added"},
-  {user_id: 6, game_id: 3, status: "added"}, 
-  {user_id: 6, game_id: 3, status: "added"}, 
+  {user_id: 5, game_id: 3, status: "added"}, 
+  {user_id: 5, game_id: 3, status: "added"}, 
 ])
 
