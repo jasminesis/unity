@@ -1,18 +1,32 @@
-<div class="col-8">
+<div class="col-8" style="margin: 0 auto">
 
 	<h1 class="display-4"><%= @schedule.event %></h1>
 
-	<p>
-		<%= @schedule.start_time %>
+	<h4> on
+		<%= @schedule.start_time.strftime("%A, %d %B %Y") %><br />
+		<%= @schedule.start_time.strftime("%I:%M %p") %>
+	</h4>
 
-		<% if @schedule.users.length > 0 %>
 
-		with
+	<% if @schedule.users.length > 0 %>
+	<h2>
+		<br />
+		Friends
+	</h2>
 
-		<% @schedule.users.each do |users| %></a>
-		<%= users.username %>
-		<% end %>
+	<% @schedule.users.each do |users| %></a>
+	<div class="card" style="width: 18rem;">
+		<img src="<%= image_url 'friendship.png' %>" style="width:100%" />
+		<div class=" card-body">
+			<p class="card-text">
+				<%= users.username %>
+			</p>
+		</div>
+	</div>
 
-		<% end %>
-	</p>
+
+
+	<% end %>
+
+	<% end %>
 </div>

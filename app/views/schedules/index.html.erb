@@ -12,17 +12,19 @@
 
 		<% schedules.each do |schedule| %>
 		<div class="event-title">
+
+			<strong><%= schedule.start_time.hour %></strong>
 			<a href="<%= schedule_path(schedule) %>">
-				<strong><%= schedule.start_time.hour %></strong>
+
 				<%= schedule.event %> with
-				<% schedule.users.each do |users| %></a>
-			<%= users.username %>
+				<% schedule.users.each do |users| %>
+				<%= users.username %></a>
 			<% end %>
 		</div>
 
-			<% end %>
+		<% end %>
 		<% end %>
 	</div>
 </div>
 
-<%= link_to 'New schedule', new_schedule_path ,({:class => "btn btn-lg btn-outline-primary"})%>
+<%= link_to 'New event', new_schedule_path ,({:class => "btn btn-lg btn-outline-primary"})%>
