@@ -9,13 +9,16 @@
 
 		<%= date.day %>
 
-			<% schedules.each do |schedule| %>
-			<div class="event-title">
-				<a href="<%= schedule_path(schedule) %>">
-					<strong><%= schedule.start_time.hour %></strong>
-					<%= schedule.event %> with
-					<%= schedule.users.ids %></a>
-			</div>
+
+		<% schedules.each do |schedule| %>
+		<div class="event-title">
+			<a href="<%= schedule_path(schedule) %>">
+				<strong><%= schedule.start_time.hour %></strong>
+				<%= schedule.event %> with
+				<% schedule.users.each do |users| %></a>
+			<%= users.username %>
+			<% end %>
+		</div>
 
 			<% end %>
 		<% end %>
