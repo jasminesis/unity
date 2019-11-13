@@ -1,11 +1,12 @@
-<h1>Freetimes#index</h1>
-<p>Find me in app/views/freetimes/index.html.erb</p>
-
-
+<h1 class="display-4">Free times</h1>
 <% @freetimes.each do |d| %>
 <p>
 	<%= d.time.strftime("%I %p") %>
 </p>
 <% end %>
 
-<%= link_to "Update Free times", new_freetime_path %>
+
+<%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-lg btn-outline-primary m-3"})%>
+
+
+

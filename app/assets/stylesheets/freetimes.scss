@@ -1,26 +1,74 @@
 // Place all the styles related to the freetimes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-input[type=checkbox] {
-	transform: scale(2);
-	/* Double-sized Checkboxes */
-	-ms-transform: scale(2);
-	/* IE */
-	-moz-transform: scale(2);
-	/* FF */
-	-webkit-transform: scale(2);
-	/* Safari and Chrome */
-	-o-transform: scale(2);
-	/* Opera */
-	padding: 10px;
+.freetimes {
+	input[type=checkbox] {
+		transform: scale(2);
+		/* Double-sized Checkboxes */
+		-ms-transform: scale(2);
+		/* IE */
+		-moz-transform: scale(2);
+		/* FF */
+		-webkit-transform: scale(2);
+		/* Safari and Chrome */
+		-o-transform: scale(2);
+		/* Opera */
+		padding: 3px;
+	}
+
+	.form-check {
+		display: flex;
+		flex-direction: column;
+
+	}
+
+	.center {
+		margin: 0 auto;
+	}
+
 }
 
-.form-check {
-	display: flex;
-	flex-direction: column;
+body {
+	// background-image: asset-url('red-bg.jpg');
+	// color: white;
+	font-family: 'Nunito', sans-serif;
 
 }
 
-.center {
-	margin: 0 auto;
+// a {
+// 	color: white;
+// }
+
+.fun-hover ul li a {
+	border-top: 1px solid rgba(0, 0, 0, 0);
+	margin: 4px;
+}
+
+.fun-hover ul li a:after {
+	color: #f0a;
+	/* code for &raquo; */
+	display: block;
+	float: right;
+	opacity: 0;
+	overflow: hidden;
+	width: 0;
+}
+
+.fun-hover ul li a:hover {
+	background: rgb(179, 37, 58);
+	color: white;
+	border-radius: 3px;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.fun-hover ul li a:hover:after {
+	opacity: 1;
+	width: 20px;
+}
+
+.navbar-brand {
+	font-family: 'ZCOOL KuaiLe', cursive;
 }
