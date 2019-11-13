@@ -8,6 +8,16 @@
         <img class="card-img-top" src=<%= game.image_url %> alt=<%= game.name %>>
         <div class="card-body">
           <h3 class="card-title"><%= game.name %></h3>
+          <%  if user_signed_in?%>
+         
+          check for friends in friends table (find all in user_id or friend_user_id  that match current user), then check if friend fav'd this game_id, then dispaly the friends username in the button
+
+          <button class="btn btn-rounded btn-success btn-sm" style="font-size: 0.5em;">
+       
+          Friend1</button>          
+
+          <br/>
+          <% end %>
           <% if game.users.select{|x| x.id == current_user.id}.length >0  %>
           <%= link_to "Remove from Favs", remove_game_path(game), :class => "btn btn-primary" %>
           <% elsif user_signed_in?%>
