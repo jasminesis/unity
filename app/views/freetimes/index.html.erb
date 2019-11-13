@@ -5,6 +5,7 @@
 <% @freetimes.each do |d| %>
 <p>
 	<%= d.time.strftime("%I %p") %>
-
 </p>
 <% end %>
+
+<%= link_to "Update Free times", new_freetime_path %>
