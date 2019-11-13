@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-Schedule.create(event: "Feed cats", start_time: Time.now())
+Schedule.create(event: "Feed cats", start_time: Time.now(), user_id: 1)
 
 User.create!([
   {email: "1test@gmail.com", username: "1testuser", password: "password", admin: false},
