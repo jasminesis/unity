@@ -27,11 +27,12 @@ Friend.create!([
   {user_id: 2, friend_user_id: 3}, 
   {user_id: 4, friend_user_id: 3}, 
   {user_id: 5, friend_user_id: 1}, 
+  {user_id: 5, friend_user_id: 2},
 ])
 
-
-Games_user.create!([
+GamesUser.create!([
   {user_id: 1, game_id: 2},
+  {user_id: 1, game_id: 1},
   {user_id: 5, game_id: 4}, 
   {user_id: 2, game_id: 1},
   {user_id: 1, game_id: 3},
