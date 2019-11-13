@@ -18,8 +18,10 @@
 
 	<div class="form-group">
 
+
 		<%= form.label :friends %><br>
 		<%= form.collection_check_boxes(:user_ids, @friends, :id, :username) %>
+
 	</div>
 
 
@@ -27,5 +29,7 @@
 	<div class="form-group">
 		<%= form.submit({:class => "btn btn-primary"}) %>
 	</div>
+
+
 	<% end %>
 </div>

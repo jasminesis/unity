@@ -1,10 +1,11 @@
 class SchedulesController < ApplicationController
   def index
     @schedules = Schedule.all
-    
+
   end
 
   def new
+
     if params[:user_id]
       puts "awesome"
     end
@@ -18,10 +19,12 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_params)
-      
+
     @schedule.user = current_user
+
   
     if @schedule.save
+
       redirect_to @schedule
     else
       render plain: schedule_params

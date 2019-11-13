@@ -2,8 +2,11 @@
 <% @freetimes.each do |d| %>
 <p>
 	<%= d.time.strftime("%I %p") %>
-
 </p>
 <% end %>
 
+
 <%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-lg btn-outline-primary m-3"})%>
+
+
+
