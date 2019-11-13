@@ -1,0 +1,12 @@
+<h1><%= @user.username %></h1>
+<%if @myself%>
+	<p>Welcome back</p>
+<% else %>
+	<%if @relationship.length == 0 %>
+		<%= link_to 'Add friend', "add/#{@user_id}" %>
+	<% else %>
+		<%= link_to 'Delete friend', "delete/#{@user_id}",
+	        method: :delete,
+	        data: { confirm: 'Are you sure?' } %>
+	<% end %>
+<% end %>
