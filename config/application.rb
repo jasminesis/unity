@@ -6,7 +6,6 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-config.time_zone = "Singapore"
 
 module Unity
   class Application < Rails::Application
