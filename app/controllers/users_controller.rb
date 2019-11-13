@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @current_id = current_user.id
     @user_id = @user.id
+
     if @user_id == @current_id
       @myself = "Myself"
     else

@@ -1,2 +1,28 @@
-
 <h1>MAGNIFICENT HOME PAGE</h1>
+
+<div class="container">
+	<div class="row">
+		<div class="col-6 border border-primary">
+			<div class="row">
+				<div class="col-12">
+					sdfssf
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-12">
+					sdfssf
+				</div>
+			</div>
+		</div>
+
+		<div class="col-6 border border-primary">
+			<% @friends.each do |friend| %>
+				<p><% if friend.online_status == 'true' %>
+					<div class="online"></div>
+				<% end %>
+				<%= link_to friend.username, user_path(friend)%>
+			<% end %></p>
+			<p>My Id: <%= @current_id%></p>
+		</div>
+	</div>
+</div>
