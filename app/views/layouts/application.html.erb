@@ -19,6 +19,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarNav">
+
 			<ul class="navbar-nav">
 				<li class="nav-item">
 					<%= link_to 'All Games', games_path,{:class => "nav-link"} %>
@@ -35,20 +36,13 @@
 				</li>
 				<% end %>
 
-				<li class="nav-item">
-					<% if user_signed_in?%>
-					<%= link_to 'log out', destroy_user_session_url, :class => "nav-link", method: :delete  %>
-					<% else %>
-					<%= link_to 'User log in', new_user_session_url,{:class => "nav-link"}  %>
-					<% end %>
-				</li>
-
-
 			</ul>
-			<% if user_signed_in?%>
-			<strong>Welcome back, <%= current_user.username %>!</strong>
-			<% end %>
 		</div>
+		<% if user_signed_in?%>
+				<%= link_to 'Log out', destroy_user_session_url, :class => "nav-link", method: :delete  %>
+			<% else %>
+				<%= link_to 'Log in', new_user_session_url,{:class => "nav-link"}  %>
+			<% end %>
 	</nav>
 
 	<div class="container text-center">

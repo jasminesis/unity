@@ -9,6 +9,7 @@
 
 		<%= date.day %>
 
+
 		<% schedules.each do |schedule| %>
 		<div class="event-title">
 			<a href="<%= schedule_path(schedule) %>">
@@ -19,7 +20,9 @@
 			<% end %>
 		</div>
 
-		<% end %>
+			<% end %>
 		<% end %>
 	</div>
 </div>
+
+<%= link_to 'New schedule', new_schedule_path ,({:class => "btn btn-lg btn-outline-primary"})%>

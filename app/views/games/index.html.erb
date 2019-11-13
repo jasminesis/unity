@@ -8,10 +8,22 @@
         <img class="card-img-top" src=<%= game.image_url %> alt=<%= game.name %>>
         <div class="card-body">
           <h3 class="card-title"><%= game.name %></h3>
+          <%  if user_signed_in?%>
+
+
+          <% @friends.each do |friend| %>
+            <% if game.users.select{|x| x.id == friend.id}.length >0  %>  
+          <button class="btn btn-rounded btn-success btn-sm ml-n3" style="font-size: 0.7em;">
+          <a href='/users/<%= friend.id %>' class="text-white"><%= friend.username %></a></button>          
+          <% end %>
+          <% end %>
+          <br/>
+          <% end %>
           <% if game.users.select{|x| x.id == current_user.id}.length >0  %>
-          <%= link_to "Remove from Favs", remove_game_path(game), :class => "btn btn-primary" %>
+          <%= link_to "Remove from Favs", remove_game_path(game), :class => "btn btn-primary mt-1" %>
           <% elsif user_signed_in?%>
-          <%= link_to "Add to Favs", game_path(game), :class => "btn btn-primary" %>
+          <%= link_to "Add to Favs", game_path(game), :class => "btn btn-primary mt-1" %>
+          
           <% end %>
 
         </div>

@@ -1,2 +1,30 @@
-
 <h1>MAGNIFICENT HOME PAGE</h1>
+
+<div class="container">
+	<div class="row d-flex justify-content-around">
+		<div class="col-7 m-3">
+			<div class="row border border-primary">
+				<div class="col-12">
+					UPCOMING GAMES
+				</div>
+			</div>
+
+			<div class="row border border-primary my-4">
+				<div class="col-12">
+					MOST PLAYED GAME
+				</div>
+			</div>
+
+		</div>
+
+		<div class="col-4 m-3 border border-primary">
+			<% @friends.each do |friend| %>
+				<p><% if friend.online_status == 'true' %>
+					<div class="online"></div>
+				<% end %>
+				<%= link_to friend.username, user_path(friend)%>
+			<% end %></p>
+			<%= link_to 'Add new Friends', users_path,{:class => "nav-link"} %>
+		</div>
+	</div>
+</div>
