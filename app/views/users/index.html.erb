@@ -1,11 +1,62 @@
 <h1>List of Users</h1>
-<td>
-	<% @users.each do |user| %>
-		<li>
-			<% if user.online_status == 'true' %>
+
+	<div class="table-responsive">
+	<table class="table user-list">
+		<thead>
+			<tr>
+			<th><span>User</span></th>
+			<th><span>Joined</span></th>
+			<th class="text-center"><span>Status</span></th>
+			<th class="text-center"><span>Online</span></th>
+			<th>&nbsp;</th>
+			</tr>
+		</thead>
+		<tbody>
+		<% @users.each do |user| %>
+			<tr>
+				<td>
+					<img src="https://bootdey.com/img/Content/user_1.jpg" alt="">
+					<%= link_to user.username, user_path(user)%>
+				</td>
+				<td><%= user.created_at %></td>
+				<td class="text-center">
+				<%  if user_signed_in?%>
+					<% @friends.each do |friend| %>
+						<%  if friend.id == user.id%>
+						<span class="label label-default">Friends</span>
+						<% end %>
+					<% end %>
+				<% end %>
+				</td>
+				<td>
+				<% if user.online_status == 'true' %>
 				<div class="online"></div>
 			<% end %>
-			<%= link_to user.username, user_path(user)%>
-		</li>
-	<% end %>
-</td>
+				</td>
+				<td style="width: 20%;">
+					<a href="#" class="table-link">
+						<span class="fa-stack">
+							<i class="fa fa-square fa-stack-2x"></i>
+							<i class="fa fa-search-plus fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+					<a href="#" class="table-link">
+						<span class="fa-stack">
+							<i class="fa fa-square fa-stack-2x"></i>
+							<i class="fa fa-pencil fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+					<a href="#" class="table-link danger">
+						<span class="fa-stack">
+							<i class="fa fa-square fa-stack-2x"></i>
+							<i class="fa fa-trash-o fa-stack-1x fa-inverse"></i>
+						</span>
+					</a>
+				</td>
+			</tr>
+			<% end %>
+
+		
+		</tbody>
+	</table>
+</div>
