@@ -23,18 +23,19 @@ Game.create(name: "PUBG PlayerUnknown’s Battleground", description: "PLAYERUNK
 Game.create(name: "Fifa 2020", description: "FIFA 20 is a football simulation video game published by Electronic Arts as part of the FIFA series.", image_url: "https://lh3.googleusercontent.com/tjFx_uPUU3sOZxujIupK-DHCmJwbhBzUse6c80tTSqeSLeNILqHm7xo6uaEXrEEFm-aQkvFnS5BZmZhE5CRCqTgm")
 
 Friend.create!([
-  {user_id: 1, friend_user_id: 2, status: "added"},
-  {user_id: 2, friend_user_id: 3, status: "added"}, 
-  {user_id: 4, friend_user_id: 3, status: "added"}, 
-  {user_id: 5, friend_user_id: 1, status: "added"}, 
+  {user_id: 1, friend_user_id: 2},
+  {user_id: 2, friend_user_id: 3}, 
+  {user_id: 4, friend_user_id: 3}, 
+  {user_id: 5, friend_user_id: 1}, 
+  {user_id: 5, friend_user_id: 2},
 ])
 
-
-Games_user.create!([
-  {user_id: 1, game_id: 2, status: "added"},
-  {user_id: 5, game_id: 4, status: "added"}, 
-  {user_id: 2, game_id: 1, status: "added"},
-  {user_id: 1, game_id: 3, status: "added"},
-  {user_id: 5, game_id: 3, status: "added"}, 
+GamesUser.create!([
+  {user_id: 1, game_id: 2},
+  {user_id: 1, game_id: 1},
+  {user_id: 5, game_id: 4}, 
+  {user_id: 2, game_id: 1},
+  {user_id: 1, game_id: 3},
+  {user_id: 5, game_id: 3}, 
 ])
 
