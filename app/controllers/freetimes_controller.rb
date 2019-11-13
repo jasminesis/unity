@@ -1,5 +1,6 @@
 class FreetimesController < ApplicationController
   def index
+    @freetimes = Freetime.all
 
   end
 

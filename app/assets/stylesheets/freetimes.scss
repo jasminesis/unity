@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 input[type=checkbox] {
+	transform: scale(2);
 	/* Double-sized Checkboxes */
 	-ms-transform: scale(2);
 	/* IE */
@@ -18,4 +19,8 @@ input[type=checkbox] {
 	display: flex;
 	flex-direction: column;
 
+}
+
+.center {
+	margin: 0 auto;
 }

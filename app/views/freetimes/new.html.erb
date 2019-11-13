@@ -5,7 +5,7 @@
 </h3>
 <div class="col-10">
 
-	<div class="form-check">
+	<div class="form-check center">
 		<%= form_with scope: :freetime, url: freetimes_path, local: true do |f| %>
 		<% require 'time' %>
 
@@ -15,8 +15,11 @@
 		<% date_time_limit = DateTime.now.end_of_day() %>
 
 		<% date_time.step(date_time_limit,hour_step).each do |e| %>
-		<%= check_box(:freetime, :time, {:multiple => true, :class => "col-6"}, e, nil) %>
-		<%= f.label(e.strftime("%I %p")) %>
+		<p>
+
+			<%= check_box(:freetime, :time, {:multiple => true, :class => "mr-3"}, e, nil) %>
+			<%= f.label(e.strftime("%I %p")) %>
+		</p>
 		<% end %>
 	</div>
 
