@@ -5,6 +5,14 @@ class GamesController < ApplicationController
   # GET /games.json
   def index
     @games = Game.all
+
+    @current_id = current_user.id
+    # get all your friends in an array
+    @allfriends = Friend.where(user_id: current_user.id, status: "added").or(Friend.where(friend_user_id: current_user.id, status: "added"))
+#  render plain: @allfriends.inspect
+    # remove yourelf from the array?
+   
+
   end
 
   # GET /games/1
