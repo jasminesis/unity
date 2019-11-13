@@ -5,9 +5,20 @@ class SchedulesController < ApplicationController
   end
 
   def new
+
   end
 
   def create
+    @schedule = Schedule.new(schedule_params)
+      
+    @schedule.user = current_user
+  
+    if @schedule.save!
+      redirect_to @schedule
+    # else
+      # render plain: "Failed"
+      # render 'new'
+    end
   end
 
   def show
