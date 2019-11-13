@@ -26,12 +26,15 @@ Friend.create!([
   {user_id: 1, friend_user_id: 2, status: "added"},
   {user_id: 2, friend_user_id: 3, status: "added"}, 
   {user_id: 4, friend_user_id: 3, status: "added"}, 
+  {user_id: 5, friend_user_id: 1, status: "added"}, 
 ])
 
 
 Games_user.create!([
   {user_id: 1, game_id: 2, status: "added"},
   {user_id: 5, game_id: 3, status: "added"}, 
-  {user_id: 5, game_id: 3, status: "added"}, 
+  {user_id: 5, game_id: 4, status: "added"}, 
+  {user_id: 2, game_id: 1, status: "added"},
+  {user_id: 1, game_id: 3, status: "added"},
 ])
 
