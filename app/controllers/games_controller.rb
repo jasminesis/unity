@@ -6,11 +6,14 @@ class GamesController < ApplicationController
   def index
     @games = Game.all
 
-    @current_id = current_user.id
-    # get all your friends in an array
-    @allfriends = Friend.where(user_id: current_user.id, status: "added").or(Friend.where(friend_user_id: current_user.id, status: "added"))
-#  render plain: @allfriends.inspect
-    # remove yourelf from the array?
+
+    # @current_id = current_user.id
+    # # get all your friends in an array
+    @friend_a = Friend.where(:user_id => current_user.id).map{|x|x.friend_user_id}
+    @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
+    @list = @friend_a.concat(@friend_b)
+    @friends = User.where("id IN (?)",@list)
+
    
 
   end
