@@ -1,29 +1,28 @@
 <h1 class="display-4">Choose free time slots</h1>
-<h3>
-	<%= Date.today.strftime("%A %d %B %Y") %>
+<h3 class="m-3">
+	<%= Date.today.strftime("%A, %d %B %Y") %>
 
 </h3>
+<div class="col-10">
 
+	<div class="form-check">
+		<%= form_with scope: :freetime, url: freetimes_path, local: true do |f| %>
+		<% require 'time' %>
 
+		<% hour_step = (1.to_f/24) %>
 
+		<% date_time = DateTime.now.at_beginning_of_hour() %>
+		<% date_time_limit = DateTime.now.end_of_day() %>
 
-<div class="form-check">
-	<%= form_with scope: :freetime, url: freetimes_path, local: true do |f| %>
-	<% require 'time' %>
-
-	<% hour_step = (1.to_f/24) %>
-
-	<% date_time = DateTime.now.at_beginning_of_hour() %>
-	<% date_time_limit = DateTime.now.end_of_day() %>
-
-	<% date_time.step(date_time_limit,hour_step).each do |e| %>
-	<%= f.label(e.hour) %>
-	<%= check_box(:freetime, :time, {:multiple => true}, e, nil) %>
-	<% end %>
-
-
-	<div class="form-group">
-		<%= f.submit({:class => "btn btn-primary"}) %>
+		<% date_time.step(date_time_limit,hour_step).each do |e| %>
+		<%= check_box(:freetime, :time, {:multiple => true, :class => "col-6"}, e, nil) %>
+		<%= f.label(e.strftime("%I %p")) %>
+		<% end %>
 	</div>
-	<% end %>
+
+
 </div>
+<div class="form-group">
+	<%= f.submit({:class => "btn btn-primary"}) %>
+</div>
+<% end %>
