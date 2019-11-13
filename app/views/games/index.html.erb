@@ -9,19 +9,19 @@
         <div class="card-body">
           <h3 class="card-title"><%= game.name %></h3>
           <%  if user_signed_in?%>
-         
-          check for friends in friends table (find all in user_id or friend_user_id  that match current user), then check if friend fav'd this game_id, then dispaly the friends username in the button
 
-          <button class="btn btn-rounded btn-success btn-sm" style="font-size: 0.5em;">
+          <% @allfriends.each do |friend| %>
+          <button class="btn btn-rounded btn-success btn-sm ml-n3" style="font-size: 0.5em;">
        
-          Friend1</button>          
-
+          <%= friend.id %></button>          
+          <% end %>
           <br/>
           <% end %>
           <% if game.users.select{|x| x.id == current_user.id}.length >0  %>
-          <%= link_to "Remove from Favs", remove_game_path(game), :class => "btn btn-primary" %>
+          <%= link_to "Remove from Favs", remove_game_path(game), :class => "btn btn-primary mt-1" %>
           <% elsif user_signed_in?%>
-          <%= link_to "Add to Favs", game_path(game), :class => "btn btn-primary" %>
+          <%= link_to "Add to Favs", game_path(game), :class => "btn btn-primary mt-1" %>
+          
           <% end %>
 
         </div>

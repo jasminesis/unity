@@ -7,11 +7,11 @@ class GamesController < ApplicationController
     @games = Game.all
 
     @current_id = current_user.id
-    # get an array of all friends of the current user
-    # Book.where(category: "Programming").or(Book.where(category: "Ruby"))
-    @allfriends = Friend.where(user_id: current_user.id).or(Friend.where(friend_user_id: current_user.id))
- render plain: @allfriends.inspect
-    
+    # get all your friends in an array
+    @allfriends = Friend.where(user_id: current_user.id, status: "added").or(Friend.where(friend_user_id: current_user.id, status: "added"))
+#  render plain: @allfriends.inspect
+    # remove yourelf from the array?
+   
 
   end
 
