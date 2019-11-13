@@ -1,0 +1,41 @@
+<h1 class="display-4">Choose free time slots</h1>
+<%= Date.today.strftime() %></h1>
+<p>
+
+	<%= Date.today.strftime() %></h1>
+</p>
+
+<%= d = DateTime.now %></h1>
+
+
+<div class="form-check">
+	<input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+	<label class="form-check-label" for="defaultCheck1">
+		Default checkbox
+	</label>
+</div>
+
+
+
+<div class="form-check">
+	<% require 'time' %>
+
+	<% hour_step = (1.to_f/24) %>
+
+	<% date_time = DateTime.now %>
+	<% date_time_limit = DateTime.new(2019,11,13,24,0,0,'+8') %>
+
+	<% date_time.step(date_time_limit,hour_step).each do |e| %>
+	<%= check_box_tag(e.hour) %>
+	<%= label_tag(e.hour) %>
+	<% end %>
+
+	<% if false %>
+	<% (DateTime.now.to_datetime.to_i .. '2019-12-11'.to_datetime.to_i).step(1.hour) do |date| %>
+	<%= Time.at(date) %>
+	<% end %>
+	<% end %>
+
+
+
+</div>

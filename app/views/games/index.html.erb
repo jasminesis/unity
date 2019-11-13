@@ -10,6 +10,7 @@
           <h3 class="card-title"><%= game.name %></h3>
           <%  if user_signed_in?%>
 
+
           <% @friends.each do |friend| %>
             <% if game.users.select{|x| x.id == friend.id}.length >0  %>  
           <button class="btn btn-rounded btn-success btn-sm ml-n3" style="font-size: 0.7em;">
