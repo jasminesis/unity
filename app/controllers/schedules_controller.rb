@@ -1,6 +1,8 @@
 class SchedulesController < ApplicationController
   def index
-    @schedules = Schedule.all
+
+    @schedules = Schedule.where("user_id = #{current_user.id}")
+
   end
 
   def new
