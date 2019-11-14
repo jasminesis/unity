@@ -1,4 +1,4 @@
-<h1>MAGNIFICENT HOME PAGE</h1>
+<h1>MALEFICENT HOME PAGE</h1>
 
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
@@ -25,13 +25,19 @@
 		</div>
 
 		<div class="col-4 m-3 border border-primary">
-			<% @friends.each do |friend| %>
-			<p><% if friend.online_status == 'true' %>
-				<div class="online"></div>
-				<% end %>
-				<%= link_to friend.username, user_path(friend)%>
-				<% end %></p>
-			<%= link_to 'Add new Friends', users_path,{:class => "nav-link"} %>
+
+
+							<% @friends.each do |friend| %>
+							<a class="btn btn-outline-light btn-block justify-content-center my-3" href="<%= user_path(friend) %>">
+								<% if friend.online_status == 'true' %>
+									<div class="online"></div>
+								<% end %>
+									<p class="d-inline-block align-middle my-0 p-2" style="color: black"><img src="https://alternative.me/icons/meetme.png" width= "30px" alt="">
+									<%= friend.username %></p>
+
+							<% end %></a>
+
+			<a class="btn btn-outline-dark btn-block my-3" href="<%= users_path %>">Add new Friends</a>
 		</div>
 	</div>
 </div>
