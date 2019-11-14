@@ -15,7 +15,7 @@
 		<% @users.each do |user| %>
 			<tr>
 				<td>
-					<img src="https://alternative.me/icons/meetme.png" alt="">
+					<img src="https://alternative.me/icons/meetme.png" width= "55px" alt="">
 					<%= link_to user.username, user_path(user)%>
 				</td>
 				<td><%= user.created_at %></td>
