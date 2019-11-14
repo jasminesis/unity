@@ -91,7 +91,7 @@ class GamesController < ApplicationController
     @relationship[0].destroy
     # render plain: @relationship.inspect
       respond_to do |format|
-        format.html { redirect_to games_url, notice: 'Game was successfully removed.' }
+        format.html { redirect_to games_url }
         format.json { head :no_content }
       end
     end
