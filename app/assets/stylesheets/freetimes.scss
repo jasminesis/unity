@@ -32,12 +32,12 @@ body {
 	// background-image: asset-url('red-bg.jpg');
 	// color: white;
 	font-family: 'Nunito', sans-serif;
-
 }
 
-// a {
-// 	color: white;
-// }
+a {
+	// color: white;
+	color: black;
+}
 
 .fun-hover ul li a {
 	border-top: 1px solid rgba(0, 0, 0, 0);
@@ -71,4 +71,5 @@ body {
 
 .navbar-brand {
 	font-family: 'ZCOOL KuaiLe', cursive;
+	color: rgb(179, 37, 58);
 }

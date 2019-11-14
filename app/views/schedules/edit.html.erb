@@ -1,2 +1,37 @@
-<h1>Schedules#edit</h1>
-<p>Find me in app/views/schedules/edit.html.erb</p>
+<div class="col-8" style="margin: 0 auto">
+
+	<h1 class="display-4">Edit <%= @schedule.event %></h1>
+
+	<h4> on
+		<%= @schedule.start_time.strftime("%A, %d %B %Y") %><br />
+		<%= @schedule.start_time.strftime("%I:%M %p") %>
+	</h4>
+
+	<%= form_with scope: :schedule, url: schedules_path, local: true do |form| %>
+
+	<div class="form-group">
+		<%= form.label :event %><br>
+		<%= form.text_field(:event, {:class => "form-control", :value => @schedule.event}) %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label :start_time %><br>
+		<%= form.datetime_field(:start_time, {:class =>  "form-control", :value => DateTime.now.strftime("%Y-%m-%dT%H:00")}) %>
+	</div>
+
+	<div class="form-group">
+		<%= form.label :friends %><br>
+		<%= form.collection_check_boxes(:user_ids, @friends, :id, :username) %>
+	</div>
+	<div class="form-group">
+		<%= form.submit({:class => "btn btn-primary"}) %>
+	</div>
+	<% end %>
+
+	<%= button_to('Destroy', schedule_path(@schedule),
+        method: :delete, :class => "nav-link btn")%>
+
+
+
+
+</div>

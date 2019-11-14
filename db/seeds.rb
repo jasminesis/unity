@@ -7,6 +7,9 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 Schedule.create(event: "Feed cats", start_time: Time.now(), user_id: 1)
+Schedule.create(event: "Pubg", start_time: Time.now(), user_id: 1)
+Schedule.create(event: "Pubg", start_time: Time.now(), user_id: 2)
+Schedule.create(event: "Pubg", start_time: Time.now(), user_id: 3)
 
 User.create!([
   {email: "1test@gmail.com", username: "1testuser", password: "password", admin: false},
