@@ -97,10 +97,6 @@ class SchedulesController < ApplicationController
     end
   end
 
-  def show
-    @schedule = Schedule.find(params[:id])
-  end
-
 
   def destroy
     @schedule = Schedule.find(params[:id])
