@@ -8,11 +8,12 @@
 	</h4>
 
 	<%= form_with scope: :schedule, model: @schedule, local: true do |form| %>
+	<div class="form-group">
+		<%= form.label :event %>
+		<br/>
 		<p class="error alert-danger">
 		<%= show_errors(@schedule, :event) %>
-	  </p>
-	<div class="form-group">
-		<%= form.label :event %><br>
+		</p>
 		<%= form.text_field(:event, {:class => "form-control", :value => @schedule.event}) %>
 	</div>
 

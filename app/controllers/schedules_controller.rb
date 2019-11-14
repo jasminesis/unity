@@ -68,6 +68,7 @@ class SchedulesController < ApplicationController
 
   def edit
     @schedule = Schedule.find(params[:id])
+    @schedule_id = params[:id]
     @current_id = current_user.id
     @friend_a = Friend.where(:user_id => current_user.id).map{|x|x.friend_user_id}
     @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
