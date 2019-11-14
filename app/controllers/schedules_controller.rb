@@ -1,6 +1,6 @@
 class SchedulesController < ApplicationController
   def index
-    @schedules = Schedule.all
+    @schedules = Schedule.where("user_id = #{current_user.id}")
   end
 
   def new
@@ -51,6 +51,12 @@ class SchedulesController < ApplicationController
     else
       redirect_to @schedule
     end
+  end
+
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_to root_path
   end
 end
 

@@ -7,19 +7,13 @@
 
 <div class="container-fluid">
 	<div class="row d-flex justify-content-around">
-		<div class="col-7 m-3">
-			<div class="row border border-danger">
+		<div class="col-7 m-3 p-4" style="background-color: #111111">
+			<div class="row">
 				<div class="col-12">
 					<p>UPCOMING GAMES</p>
 					<% @schedules.each do |schedule| %>
 						<p><a href="<%= schedule_path(schedule) %>"><%= schedule.event %></a></p>
 					<% end %>
-				</div>
-			</div>
-
-			<div class="row border border-danger my-4">
-				<div class="col-12">
-					MOST PLAYED GAME
 				</div>
 			</div>
 
