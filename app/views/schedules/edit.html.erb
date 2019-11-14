@@ -7,8 +7,10 @@
 		<%= @schedule.start_time.strftime("%I:%M %p") %>
 	</h4>
 
-	<%= form_with scope: :schedule, url: schedules_path, local: true do |form| %>
-
+	<%= form_with scope: :schedule, model: @schedule, local: true do |form| %>
+		<p class="error alert-danger">
+		<%= show_errors(@schedule, :event) %>
+	  </p>
 	<div class="form-group">
 		<%= form.label :event %><br>
 		<%= form.text_field(:event, {:class => "form-control", :value => @schedule.event}) %>

@@ -3,6 +3,8 @@ Rails.application.routes.draw do
 
   devise_for :users, controllers: { sessions: 'user/sessions', registrations: 'user/registrations' }
 
+  # post '/schedules/update' => 'schedules#update', as: 'update_schedules'
+
   resources :freetimes
   resources :schedules
 
