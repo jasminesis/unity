@@ -15,7 +15,7 @@ class FreetimesController < ApplicationController
       something.save!
      end
 
-     redirect_to new_freetime_path
+     redirect_to new_schedule_path
     # if @freetime.save!
       # render plain: freetime_params
     # else

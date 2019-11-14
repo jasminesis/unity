@@ -14,19 +14,20 @@
 		Friends
 	</h2>
 
-	<% @schedule.users.each do |users| %></a>
-	<div class="card" style="width: 18rem;">
-		<img src="<%= image_url 'friendship.png' %>" style="width:100%" />
-		<div class=" card-body">
-			<p class="card-text">
-				<%= users.username %>
-			</p>
+	<div class="col-12 user-card-container d-flex flex-wrap">
+		<% @schedule.users.each do |users| %></a>
+		<div class="card col-6">
+			<img src="<%= image_url 'friendship.png' %>" style="width:100%" />
+			<div class=" card-body">
+				<p class="card-text">
+					<%= users.username %>
+				</p>
+			</div>
 		</div>
+		<% end %>
 	</div>
 
-
-
 	<% end %>
 
-	<% end %>
+	<%= link_to 'Edit event', edit_schedule_path ,({:class => "btn btn-lg btn-outline-secondary m-3"})%>
 </div>
