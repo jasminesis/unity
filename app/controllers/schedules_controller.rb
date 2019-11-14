@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
 
  
-
+# 
   def index
     @schedules = Schedule.all
 
@@ -39,7 +39,6 @@ class SchedulesController < ApplicationController
       render "new"
     end
   end
-
 
   def update
     @schedule = Schedule.new(schedule_params)
