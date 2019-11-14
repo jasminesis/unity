@@ -13,26 +13,30 @@
 
 
 			<% schedules.each do |schedule| %>
-			<div class="event-title">
+			<a href="<%= schedule_path(schedule) %>">
+				<div class="event-title">
 
-				<strong><%= schedule.start_time.hour %></strong>
-				<a href="<%= schedule_path(schedule) %>">
+					<strong><%= schedule.start_time.strftime("%l%P") %></strong> -
 
-					<%= schedule.event %> 
-					
+					<%= schedule.event %>
+
 					<% if schedule.users.length > 0 %>
 					with
-					
-					<% schedule.users.each do |users| %>
+					<% schedule.users.each_with_index do |users, index| %>
+					<% if index >= 1 %>
+					& <%= users.username %>
+					<% else %>
 					<%= users.username %>
-				<% end %></a>
-				<% end %>
-			</div>
-
-			<% end %>
+					<% end %>
+					<% end %>
+			</a>
 			<% end %>
 		</div>
-	</div>
 
-	<%= link_to 'New event', new_schedule_path ,({:class => "btn btn-lg btn-outline-danger mb-3"})%>
+		<% end %>
+		<% end %>
+	</div>
+</div>
+
+<%= link_to 'New event', new_schedule_path ,({:class => "btn btn-lg btn-outline-danger mb-3"})%>
 </div>

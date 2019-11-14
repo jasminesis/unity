@@ -1,17 +1,18 @@
 <div class="freetimes">
 	<h1 class="display-4">Choose free time slots</h1>
 
-
-	<% if @datetime.to_date == DateTime.now.to_date %>
-	<% else %>
-	<a href="?newdate=<%= @datetime.yesterday.beginning_of_day() %>"><span>&#x2190;</span></a>
+	<% unless @datetime.to_date == DateTime.now.to_date %>
+	<a href=" ?newdate=<%= @datetime.yesterday.beginning_of_day() %>"><span class="icons-lg">&#x2190;</span></a>
 	<% end %>
-	<span class="m-3">
+	<span class="m-3" style="font-size: 1.5rem">
 		<%= @datetime.strftime("%A, %d %B %Y") %>
 	</span>
 
-	<a href="?newdate=<%= @datetime.tomorrow.beginning_of_day() %>"><span>&#x2192;</span></a>
-
+	<a href="?newdate=<%= @datetime.tomorrow.beginning_of_day() %>"><span class="icons-lg">&#x2192;</span></a>
+	<% if @datetime.to_date != DateTime.now.to_date %>
+	<br />
+	<a href=" ?newdate=<%= DateTime.now() %>"><button class="btn btn-outline-light mt-2">Today</button></a>
+	<% end %>
 	<div class="col-12">
 
 		<div class="form-check center">
