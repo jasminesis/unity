@@ -6,11 +6,11 @@
 
 	<div class="form-group">
 		<%= form.label :event %>
-		<br/>
-		<p class="error alert-danger">
-		<%= show_errors(@schedule, :event) %>
-		</p>
+		<br />
 		<%= form.text_field(:event, {:class => "form-control", :placeholder => "Game name (e.g. Untitled Goose Game)"}) %>
+		<p class="error alert-danger">
+			<%= show_errors(@schedule, :event) %>
+		</p>
 	</div>
 
 
@@ -21,11 +21,16 @@
 
 
 	<div class="form-group">
-
-
 		<%= form.label :friends %><br>
-		<%= form.collection_check_boxes(:user_ids, @friends, :id, :username) %>
+		<div class="d-flex justify-content-around">
+			<% @friends.each do|friend| %>
+			<p>
+				<%= check_box(:schedule, :user_ids,{:multiple => true},friend.id,nil ) %>
+				<%= form.label(friend.username) %>
+			</p>
+			<% end %>
 
+		</div>
 	</div>
 
 
