@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   def index
+
     @schedules = Schedule.where("user_id = #{current_user.id}")
 
   end
@@ -22,7 +23,7 @@ class SchedulesController < ApplicationController
 
     @schedule.user = current_user
 
-  
+
     if @schedule.save
 
       redirect_to @schedule
@@ -45,6 +46,14 @@ class SchedulesController < ApplicationController
     @friends = User.where("id IN (?)",@list)
   end
 
+  def update
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
+      redirect_to @schedule
+    else
+      redirect_to @schedule
+    end
+  end
 end
 
 def schedule_params
