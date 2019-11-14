@@ -5,18 +5,18 @@
 <div class="card-columns d-inline-block">
   <% @games.each do |game| %>
       <div class="card text-center" style="width: 18rem;">
-        <img class="card-img-top" src=<%= game.image_url %> alt=<%= game.name %>>
+        <img class="card-img-top mb-n2" src=<%= game.image_url %> alt=<%= game.name %>>
         <div class="card-body">
         <%  if user_signed_in?%>
          
         <% if game.users.select{|x| x.id == current_user.id}.length >0  %>
-            <%= link_to "❤️", remove_game_path(game), :class => "float-right", style: style="text-decoration: none" %>
+            <%= link_to "❤️", remove_game_path(game), :class => "float-right mt-n2", style: style="text-decoration: none" %>
           <% else %>
-          <%= link_to "🖤", game_path(game), :class => "float-right", style: style="text-decoration: none" %>
+          <%= link_to "🤍", game_path(game), :class => "float-right mt-n2", style: style="text-decoration: none" %>
         <% end %>
         <% end %>
          
-        <h3 class="card-title"><%= game.name %> </h3>
+        <h3 class="card-title mt-n2"><%= game.name %> </h3>
         
           <%  if user_signed_in?%>
             <% @friends.each do |friend| %>
