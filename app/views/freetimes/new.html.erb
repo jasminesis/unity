@@ -10,9 +10,13 @@
 		<%= @datetime.strftime("%A, %d %B %Y") %>
 	</h3>
 
+
 	<a href="?newdate=<%= @datetime.tomorrow.beginning_of_day() %>"><span>&#x2192;</span></a>
 
-	<div class="col-10">
+
+
+	<div class="col-6 offset-3">
+
 
 		<div class="form-check center">
 			<%= form_with scope: :freetime, url: freetimes_path, local: true do |f| %>
@@ -23,18 +27,19 @@
 			<% date_time = @datetime.at_beginning_of_hour() %>
 			<% date_time_limit = @datetime.end_of_day() %>
 
-			<% date_time.step(date_time_limit,hour_step).each do |e| %>
-			<p>
-				<%= check_box(:freetime, :time, {:multiple => true, :class => "mr-3"}, e, nil) %>
-				<%= f.label(e.end_of_hour().strftime("%I:00 %p - %I:%M %p ")) %>
-			</p>
-			<% end %>
+			<div class="d-flex flex-column flex-wrap justify-content-start align-items-stretch p-4" style="height: 50vh">
+				<% date_time.step(date_time_limit,hour_step).each do |e| %>
+				<p>
+					<%= check_box(:freetime, :time, {:multiple => true, :class => "mr-3"}, e, nil) %>
+					<%= f.label(e.end_of_hour().strftime("%I:00 %p - %I:%M %p ")) %>
+				</p>
+				<% end %>
+			</div>
+
+
 		</div>
-
-
+		<div class="form-group">
+			<%= f.submit({:class => "btn btn-danger"}) %>
+		</div>
+		<% end %>
 	</div>
-	<div class="form-group">
-		<%= f.submit({:class => "btn btn-danger"}) %>
-	</div>
-	<% end %>
-</div>
