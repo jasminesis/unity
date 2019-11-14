@@ -8,5 +8,7 @@ class HomesController < ApplicationController
     @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
     @list = @friend_a.concat(@friend_b)
     @friends = User.where("id IN (?)",@list)
+
+    @schedules = Schedule.all
   end
 end

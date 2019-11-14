@@ -15,9 +15,9 @@
 <p>
 	<% @user.freetime.each do |f| %>
 
-	<div class="alert alert-primary">≈
-		<%= link_to 'Add new event', "#{@user_id}/schedules/new" %>
-		<%= f. time %>
+	<div class="card">
+		<%= f.time.strftime("%A, %d %B %Y, %I %p") %>
+		<%= link_to 'Schedule new event', "#{@user_id}/schedules/new" %>
 	</div>
 
 	<% end %>
