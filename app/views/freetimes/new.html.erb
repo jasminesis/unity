@@ -25,11 +25,15 @@
 			<% date_time_limit = @datetime.end_of_day() %>
 
 			<div class="d-flex flex-column flex-wrap justify-content-start align-items-stretch p-4" style="height: 65vh">
-				<% date_time.step(date_time_limit,hour_step).each do |e| %>
+				<% date_time.step(date_time_limit,hour_step).each_with_index do |e, index| %>
+
+				<% unless index == 0 %>
+
 				<p>
 					<%= check_box(:freetime, :time, {:multiple => true, :class => "mr-3"}, e, nil) %>
 					<%= f.label(e.end_of_hour().strftime("%I:00 %p - %I:%M %p ")) %>
 				</p>
+				<% end %>
 				<% end %>
 			</div>
 

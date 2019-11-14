@@ -1,6 +1,7 @@
 <h1 class="display-4">Your free times</h1>
 <%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-lg btn-outline-light mb-3"})%>
 
+<% unless @freetimes %>
 <table class="table">
 	<thead>
 		<tr>
@@ -26,3 +27,4 @@
 		<% end %>
 	</tbody>
 </table>
+<% end %>
