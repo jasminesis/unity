@@ -18,9 +18,14 @@
 				<strong><%= schedule.start_time.hour %></strong>
 				<a href="<%= schedule_path(schedule) %>">
 
-					<%= schedule.event %> with
+					<%= schedule.event %> 
+					
+					<% if schedule.users.length > 0 %>
+					with
+					
 					<% schedule.users.each do |users| %>
-					<%= users.username %></a>
+					<%= users.username %>
+				<% end %></a>
 				<% end %>
 			</div>
 
