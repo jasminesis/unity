@@ -1,8 +1,8 @@
 class SchedulesController < ApplicationController
 
-
   def index
-    @schedules = Schedule.all
+
+    @schedules = Schedule.where("user_id = #{current_user.id}")
 
   end
 
@@ -23,7 +23,6 @@ class SchedulesController < ApplicationController
     @schedule = Schedule.new(schedule_params)
 
     @schedule.user = current_user
-
     
     if @schedule.save
 
@@ -39,12 +38,14 @@ class SchedulesController < ApplicationController
     end
   end
 
+
   def update
     @schedule = Schedule.new(schedule_params)
 
     @schedule.user = current_user
     @schedule_id = params[:id]
     
+
     if @schedule.save
 
       redirect_to @schedule
@@ -75,6 +76,20 @@ class SchedulesController < ApplicationController
     
   end
 
+  def update
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
+      redirect_to @schedule
+    else
+      redirect_to @schedule
+    end
+  end
+
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_to root_path
+  end
 end
 
 def schedule_params

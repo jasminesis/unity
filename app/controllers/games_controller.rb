@@ -7,12 +7,12 @@ class GamesController < ApplicationController
 
     if user_signed_in?
     # # get all your friends in an array
-    @friend_a = Friend.where(:user_id => current_user.id).map{|x|x.friend_user_id}
-    @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
-    @list = @friend_a.concat(@friend_b)
-    @friends = User.where("id IN (?)",@list)
+      @friend_a = Friend.where(:user_id => current_user.id).map{|x|x.friend_user_id}
+      @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
+      @list = @friend_a.concat(@friend_b)
+      @friends = User.where("id IN (?)",@list)
     end
-   
+
 
   end
 
