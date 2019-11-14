@@ -54,6 +54,12 @@ class SchedulesController < ApplicationController
       redirect_to @schedule
     end
   end
+
+  def destroy
+    @schedule = Schedule.find(params[:id])
+    @schedule.destroy
+    redirect_to root_path
+  end
 end
 
 def schedule_params
