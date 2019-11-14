@@ -11,7 +11,7 @@
 		<% @freetimes.each do |d| %>
 		<tr>
 
-			<td><%= d.time.in_time_zone("Singapore").strftime("%I %p") %></td>
+			<td><%= d.time.in_time_zone("Singapore").strftime("%e %b - %I %p") %></td>
 			<td><%= link_to 'Delete', edit_freetime_path(d) %></td>
 		</tr>
 		<% end %>
