@@ -1,30 +1,33 @@
 <h4 class="text-center">This month is</h4>
 <h1 class="display-4 text-center"><%= Date.today.strftime("%B") %> <%= Date.today.year() %></h1>
 
-<div class="calendar_container col-9" style="margin:0 auto">
+<div class="simple-calendar">
 
-	<div id="calendar">
+	<div class="calendar_container col-9" style="margin:0 auto">
 
-		<%= month_calendar events: @schedules do |date, schedules| %>
+		<div id="calendar">
 
-		<%= date.day %>
+			<%= month_calendar events: @schedules do |date, schedules| %>
+
+			<%= date.day %>
 
 
-		<% schedules.each do |schedule| %>
-		<div class="event-title">
+			<% schedules.each do |schedule| %>
+			<div class="event-title">
 
-			<strong><%= schedule.start_time.hour %></strong>
-			<a href="<%= schedule_path(schedule) %>">
+				<strong><%= schedule.start_time.hour %></strong>
+				<a href="<%= schedule_path(schedule) %>">
 
-				<%= schedule.event %> with
-				<% schedule.users.each do |users| %>
-				<%= users.username %></a>
+					<%= schedule.event %> with
+					<% schedule.users.each do |users| %>
+					<%= users.username %></a>
+				<% end %>
+			</div>
+
+			<% end %>
 			<% end %>
 		</div>
-
-		<% end %>
-		<% end %>
 	</div>
-</div>
 
-<%= link_to 'New event', new_schedule_path ,({:class => "btn btn-lg btn-outline-primary mb-3"})%>
+	<%= link_to 'New event', new_schedule_path ,({:class => "btn btn-lg btn-outline-danger mb-3"})%>
+</div>

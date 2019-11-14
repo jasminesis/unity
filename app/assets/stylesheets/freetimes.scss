@@ -72,4 +72,18 @@ a {
 .navbar-brand {
 	font-family: 'ZCOOL KuaiLe', cursive;
 	color: rgb(179, 37, 58);
+	font-size: 2rem;
+}
+
+.navbar-brand:hover {
+	color: red;
+}
+
+.nav-link:hover {
+	color: rgb(179, 37, 58);
+}
+
+.card {
+	background-color: black;
+	border: 2px solid black;
 }

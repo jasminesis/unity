@@ -3,7 +3,7 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .simple-calendar {
 	.day {
-		background: white;
+		background: black;
 	}
 
 	.wday-0 {}
@@ -21,7 +21,7 @@
 	.wday-6 {}
 
 	.today {
-		background: #00aced;
+		background: rgb(179, 37, 58);
 	}
 
 	.past {}
@@ -31,11 +31,11 @@
 	.start-date {}
 
 	.prev-month {
-		background: #c0deed;
+		background: #303030;
 	}
 
 	.next-month {
-		background: #c0deed;
+		background: #303030;
 	}
 
 	.current-month {}
@@ -43,6 +43,6 @@
 	.has-events {}
 
 	a {
-		color: black;
+		color: white;
 	}
 }
