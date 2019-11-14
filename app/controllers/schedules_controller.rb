@@ -1,13 +1,10 @@
 class SchedulesController < ApplicationController
 
   def index
-
     @schedules = Schedule.where("user_id = #{current_user.id}")
-
   end
 
   def new
-
     if params[:user_id]
       puts "awesome"
     end
