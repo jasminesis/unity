@@ -5,7 +5,11 @@
 	<%= form_with scope: :schedule, url: schedules_path, local: true do |form| %>
 
 	<div class="form-group">
-		<%= form.label :event %><br>
+		<%= form.label :event %>
+		<br/>
+		<p class="error alert-danger">
+		<%= show_errors(@schedule, :event) %>
+		</p>
 		<%= form.text_field(:event, {:class => "form-control", :placeholder => "Game name (e.g. Untitled Goose Game)"}) %>
 	</div>
 
