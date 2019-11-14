@@ -1,7 +1,7 @@
 <div class="freetimes">
 	<h1 class="display-4">Choose free time slots</h1>
 
-	<% unless @datetime.to_date == DateTime.now.to_date %>
+	<% unless @datetime.in_time_zone("Singapore").to_date == DateTime.now.in_time_zone("Singapore").to_date %>
 	<a href=" ?newdate=<%= @datetime.yesterday.beginning_of_day() %>"><span class="icons-lg">&#x2190;</span></a>
 	<% end %>
 	<span class="m-3" style="font-size: 1.5rem">
