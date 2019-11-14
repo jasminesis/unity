@@ -32,6 +32,16 @@ class FreetimesController < ApplicationController
   def edit
     @freetime = Freetime.find(params[:id])
   end
+  
+  def destroy
+    @freetime = Freetime.find(params[:id])
+    @freetime.destroy
+  
+    respond_to do |format|
+      format.html { redirect_to(freetimes_url) }
+      format.xml  { head :ok }
+    end
+  end
 end
 
 private

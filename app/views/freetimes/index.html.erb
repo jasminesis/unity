@@ -4,7 +4,7 @@
 	<thead>
 		<tr>
 			<th scope="col">Times</th>
-			<th scope="col">Edit</th>
+			<th scope="col">Delete</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -12,7 +12,11 @@
 		<tr>
 
 			<td><%= d.time.in_time_zone("Singapore").strftime("%e %b - %I %p") %></td>
-			<td><%= link_to 'Delete', edit_freetime_path(d) %></td>
+			<td>
+				<%= link_to 'Destroy',  { action: :destroy, id: d.id }, method: :delete, data: { confirm: 'Are you sure?' } %><i
+					class='fas fa-trash-alt'></i>
+			</td>
+
 		</tr>
 		<% end %>
 	</tbody>
