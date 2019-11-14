@@ -1,4 +1,4 @@
-<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to right, #EC0011 0%, #4D0009 100%)">
+<div class="jumbotron jumbotron-fluid" style="background: linear-gradient(to right, #EC0011 0%, #4D0009 100%); border-radius: 10px">
 	<div class="container">
 		<h1 class="display-4">Unity</h1>
 		<p class="lead">Find friends with Unity, schedule time to play together</p>
@@ -7,19 +7,20 @@
 
 <div class="container-fluid">
 	<div class="row d-flex justify-content-around">
-		<div class="col-7 m-3 p-4" style="background-color: #111111">
+		<div class="col-7 m-3 p-4" style="background-color: #111111; border-radius: 10px">
 			<div class="row">
 				<div class="col-12">
 					<p>UPCOMING GAMES</p>
 					<% @schedules.each do |schedule| %>
-						<p><a href="<%= schedule_path(schedule) %>"><%= schedule.event %></a></p>
+						<p><a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white"><%= schedule.event %></a></p>
 					<% end %>
+					<a class="btn btn-dark btn-block mx-auto" href="<%= schedules_path %>">Add new Schedules</a>
 				</div>
 			</div>
 
 		</div>
 
-		<div class="col-4 m-3 rounded" style="background-color: #111111" >
+		<div class="col-4 m-3 rounded" style="background-color: #111111; border-radius: 10px" >
 				<% @friends.each do |friend| %>
 				<a class="btn btn-outline-dark btn-block justify-content-center my-3" href="<%= user_path(friend) %>">
 					<% if friend.online_status == 'true' %>
