@@ -77,13 +77,30 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    @schedule = Schedule.find(params[:id])
-    if @schedule.update(schedule_params)
+    @schedule = Schedule.new(schedule_params)
+
+    @schedule.user = current_user
+    @schedule_id = params[:id]
+    
+    if @schedule.save
+
       redirect_to @schedule
     else
-      redirect_to @schedule
+      # render plain: schedule_params
+      # @schedule = Schedule.find(params[:id])
+      @current_id = current_user.id
+      @friend_a = Friend.where(:user_id => current_user.id).map{|x|x.friend_user_id}
+      @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
+      @list = @friend_a.concat(@friend_b)
+      @friends = User.where("id IN (?)",@list)
+      render "edit"
     end
   end
+
+  def show
+    @schedule = Schedule.find(params[:id])
+  end
+
 
   def destroy
     @schedule = Schedule.find(params[:id])
