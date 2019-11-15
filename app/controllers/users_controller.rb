@@ -3,7 +3,7 @@ class UsersController < ApplicationController
 
   def index
     @users = User.all
-
+    @games = Game.all
     #find all my friends!
     if user_signed_in?
       # # get all your friends in an array
