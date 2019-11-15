@@ -6,16 +6,21 @@ class FreetimesController < ApplicationController
   end
 
   def new
-    if params[:newdate]
-      @datetime = DateTime.parse(params[:newdate])
-    else      
+    if params[:counter] == "increase"
+      session[:freetime_counter] = session[:freetime_counter] + 1
+      @datetime = DateTime.now.beginning_of_day().advance(:days => session[:freetime_counter])
+    elsif params[:counter] == "decrease"
+      session[:freetime_counter] = session[:freetime_counter] - 1
+      @datetime = DateTime.now.beginning_of_day().advance(:days => session[:freetime_counter])
+    else
+      session[:freetime_counter] = 0
       @datetime = DateTime.now
-    end
+    end 
    end
 
   def create
     params[:freetime][:time].each do |time|
-      something = Freetime.new(time: time, user_id: current_user.id)
+      something = Freetime.new(time: DateTime.parse(time), user_id: current_user.id)
       something.save!
     end
 
