@@ -16,20 +16,21 @@ class User::RegistrationsController < Devise::RegistrationsController
     @user.update(online_status_params)
   end
 
+  # GET /resource/edit
+  def edit
+    super
+  end
+
+  # PUT /resource
+  def update
+    @user.update(online_status_params)
+    super
+  end
+
   private
     def online_status_params
       params.require(:user).permit(:online_status, :username)
     end
-  # GET /resource/edit
-  # def edit
-  #   super
-  # end
-
-  # PUT /resource
-  # def update
-  #   super
-  # end
-
   # DELETE /resource
   # def destroy
   #   super
