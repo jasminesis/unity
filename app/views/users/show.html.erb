@@ -12,14 +12,27 @@
 <% end %>
 
 <% if @user.freetime %>
-<p>
-	<% @user.freetime.each do |f| %>
+<div class="col-12" style="margin: 0 auto">
 
-	<div class="card">
-		<%= f.time.strftime("%A, %d %B %Y, %I %p") %>
-		<%= link_to 'Schedule new event', "#{@user_id}/schedules/new" %>
+	<h1 class="display-4"><%= @user.username %>'s Free Times</h1>
+	<div class="col-12 d-flex flex-wrap">
+		<% @user.freetime.order("time ASC").each do |f| %>
+
+		<% unless f.time.in_time_zone("Singapore") < DateTime.now.in_time_zone("Singapore") %>
+
+		<!-- <% if false %> 
+			TODO: change so that only time slots in common will show up
+			<% end %> -->
+
+		<div class="btn btn-outline-dark btn-block justify-content-center my-3 free-time-card m-2">
+			<%= link_to("#{@user_id}/schedules/new?date=#{f.time.in_time_zone("Singapore")}") do %>
+
+			<%= f.time.in_time_zone("Singapore").strftime("%A, %d %B %Y, %I %p") %>
+			<div>Schedule new event!</div>
+			<% end %>
+		</div>
+
+		<% end %>
+		<% end %>
 	</div>
-
 	<% end %>
-</p>
-<% end %>

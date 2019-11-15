@@ -12,11 +12,28 @@
 			<div class="row">
 				<div class="col-12">
 					<p class="home-title">Upcoming Games</p>
+
 					<% @schedules.each do |schedule| %>
-					<p><a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>"
-							style="color: white"><%= schedule.event %></a></p>
+					<p>
+						<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
+							<%= schedule.event %><br />
+							<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %>
+							<% if schedule.users.length > 0 %>
+							<br />with
+							<% schedule.users.each_with_index do |users, index| %>
+							<% if index >= 1 %>
+							& <%= users.username %>
+							<% else %>
+							<%= users.username %>
+							<% end %>
+							<% end %>
+							<% end %>
+					</p>
+					</a>
+
 					<% end %>
-					<a class="btn btn-dark btn-block mx-auto" href="<%= schedules_path %>">Add new Schedules</a>
+					<a class="btn btn-dark btn-block mx-auto" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new
+						event</a>
 				</div>
 			</div>
 
@@ -36,7 +53,7 @@
 					<%= friend.username %></p>
 				<% end %>
 			</a>
-			<a class="btn btn-dark btn-block my-3" href="<%= users_path %>">Add new Friends</a>
+			<a class="btn btn-dark btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add new friends</a>
 		</div>
 	</div>
 </div>
