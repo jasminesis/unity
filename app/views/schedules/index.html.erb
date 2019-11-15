@@ -1,6 +1,8 @@
 <h4 class="text-center">This month is</h4>
 <h1 class="display-4 text-center"><%= Date.today.strftime("%B") %> <%= Date.today.year() %></h1>
 
+<%= link_to 'Add new event', new_schedule_path ,({:class => "btn btn-lg btn-outline-light mb-3"})%>
+
 <div class="simple-calendar">
 
 	<div class="calendar_container col-9" style="margin:0 auto">
@@ -38,5 +40,4 @@
 	</div>
 </div>
 
-<%= link_to 'New event', new_schedule_path ,({:class => "btn btn-lg btn-outline-danger mb-3"})%>
 </div>
