@@ -32,8 +32,14 @@
 					</a>
 
 					<% end %>
+
+					<% @friend_schedule.each do |schedule| %>
+						<p><a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white"><%= schedule.event %></a></p>
+					<% end %>
+
 					<a class="btn btn-dark btn-block mx-auto" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new
 						event</a>
+
 				</div>
 			</div>
 

@@ -2,8 +2,10 @@ class UsersController < ApplicationController
   before_action :authenticate_user!
 
   def index
-    @users = User.all
     @games = Game.all
+    @users = User.where.not(id: current_user.id)
+
+
     #find all my friends!
     if user_signed_in?
       # # get all your friends in an array
