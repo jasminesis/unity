@@ -4,6 +4,7 @@
 	<%= submit_tag ("Search") %>
 <% end %>
 
+
 <% if @params %>
 	<div class="table-responsive">
 		<table class="table user-list">
@@ -41,6 +42,7 @@
 						<% @friends.each do |friend| %>
 						<%  if friend.id == user.id%>
 						<span class="label label-default">Friends</span>
+
 						<% end %>
 						<% end %>
 						<% end %>
