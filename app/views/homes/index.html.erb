@@ -14,29 +14,30 @@
 					<p class="home-title">Upcoming Games</p>
 
 					<% @schedules.each do |schedule| %>
-					<p>
-						<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
-							<%= schedule.event %><br />
-							<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %>
-							<% if schedule.users.length > 0 %>
-								<br />with
-								<% schedule.users.each_with_index do |users, index| %>
-									<% if index >= 1 %>
-										& <%= users.username %>
-									<% else %>
-										<%= users.username %>
+						<p>
+							<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
+								<%= schedule.event %><br />
+								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %>
+								<% if schedule.users.length > 0 %>
+									<br />with
+									<% schedule.users.each_with_index do |users, index| %>
+										<% if index >= 1 %>
+											& <%= users.username %>
+										<% else %>
+											<%= users.username %>
+										<% end %>
 									<% end %>
 								<% end %>
-							<% end %>
-						</a>
-					</p>
+							</a>
+						</p>
 					<% end %>
 
 
 						<% @friend_schedule.each do |schedule| %>
 							<p>
 								<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white"><%= schedule.event %><br/>
-								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %>
+								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %><br/>
+								invited by: <%= schedule.user.username%>
 								</a>
 							</p>
 						<% end %>
