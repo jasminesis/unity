@@ -9,8 +9,7 @@
 
 	<%= form_with scope: :schedule, model: @schedule, local: true do |form| %>
 	<div class="form-group">
-		<%= form.label :event %>
-		<br />
+		<%= form.label :event %><br />
 		<p class="error alert-danger">
 			<%= show_errors(@schedule, :event) %>
 		</p>
