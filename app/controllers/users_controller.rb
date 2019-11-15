@@ -4,8 +4,7 @@ class UsersController < ApplicationController
   def index
     @games = Game.all
     @users = User.where.not(id: current_user.id)
-
-
+    @mygames = GamesUser.where(user_id: current_user.id).pluck(:game_id)
     #find all my friends!
     if user_signed_in?
       # # get all your friends in an array
