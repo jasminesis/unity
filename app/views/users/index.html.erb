@@ -1,45 +1,45 @@
 <h1>List of Users</h1>
 
-	<div class="table-responsive">
+<div class="table-responsive">
 	<table class="table user-list">
 		<thead>
 			<tr>
-			<th><span>&nbsp;</span></th>
-			<th><span>User</span></th>
-			<th><span>Joined</span></th>
-			<th class="text-center"><span>Status</span></th>
-			<th class="text-center"><span>Online</span></th>
+				<th><span>&nbsp;</span></th>
+				<th><span>User</span></th>
+				<th><span>Joined</span></th>
+				<th class="text-center"><span>Status</span></th>
+				<th class="text-center"><span>Online</span></th>
 			</tr>
 		</thead>
 		<tbody>
-		<% @users.each do |user| %>
+			<% @users.order("online_status DESC").each do |user| %>
 			<tr>
 				<td>
-				<%= image_tag 'default-avatar.png', class: "mr-2", width: "55px" %>
+					<%= image_tag 'default-avatar.png', class: "mr-2", width: "55px" %>
 				</td>
 				<td>
-				<%= link_to user.username, user_path(user)%>
+					<%= link_to user.username, user_path(user)%>
 				</td>
 				<td><%= user.created_at %></td>
 				<td class="text-center">
-				<%  if user_signed_in?%>
+					<%  if user_signed_in?%>
 					<% @friends.each do |friend| %>
-						<%  if friend.id == user.id%>
-						<span class="label label-default">Friends</span>
-						<% end %>
+					<%  if friend.id == user.id%>
+					<span class="label label-default">Friends</span>
 					<% end %>
-				<% end %>
+					<% end %>
+					<% end %>
 				</td>
 				<td>
-				<% if user.online_status == 'true' %>
-				<div class="online"></div>
-			<% end %>
+					<% if user.online_status == 'true' %>
+					<div class="online"></div>
+					<% end %>
 				</td>
-				
+
 			</tr>
 			<% end %>
 
-		
+
 		</tbody>
 	</table>
 </div>
