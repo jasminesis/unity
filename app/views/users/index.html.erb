@@ -43,11 +43,11 @@
 
 				<td style="max-width:200px">
 				<% user.games.each do |gameuser| %>
-						<button class="btn btn-rounded btn-success btn-sm ml-n3 mb-1" style="font-size: 0.7em;">
+						<span class="badge badge-success ml-n3 mb-1" style="font-size: 0.7em;">
 						<% if  @mygames.include? gameuser.id %>
-						<%= gameuser.name %> ❤️</a></button>
+						<%= gameuser.name %> ❤️</a></span>
 						<% else %>
-						<%= gameuser.name %></a></button>
+						<%= gameuser.name %></a></span>
 						<% end %>
 				<% end %>
 
