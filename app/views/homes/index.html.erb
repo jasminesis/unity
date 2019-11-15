@@ -36,7 +36,8 @@
 						<% @friend_schedule.each do |schedule| %>
 							<p>
 								<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white"><%= schedule.event %><br/>
-								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %>
+								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %><br/>
+								invited by: <%= schedule.user.username%>
 								</a>
 							</p>
 						<% end %>
