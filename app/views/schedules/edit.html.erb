@@ -10,10 +10,16 @@
 	<%= form_with scope: :schedule, model: @schedule, local: true do |form| %>
 	<div class="form-group">
 		<%= form.label :event %><br />
-		<p class="error alert-danger">
-			<%= show_errors(@schedule, :event) %>
-		</p>
 		<%= form.text_field(:event, {:class => "form-control", :value => @schedule.event}) %>
+		<% if @schedule.errors.any? %>
+		<div class="error alert-danger text-left">
+		    <ul>
+			<% @schedule.errors.full_messages.each do |msg| %>
+			  <li><%= msg %></li>
+			<% end %>
+		  </ul>
+		</div>
+	  <% end %>
 	</div>
 
 

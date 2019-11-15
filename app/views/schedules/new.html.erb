@@ -8,9 +8,16 @@
 		<%= form.label :event %>
 		<br />
 		<%= form.text_field(:event, {:class => "form-control", :placeholder => "Game name (e.g. Untitled Goose Game)"}) %>
-		<p class="error alert-danger">
-			<%= show_errors(@schedule, :event) %>
-		</p>
+
+		<% if @schedule.errors.any? %>
+		<div class="error alert-danger text-left">
+		    <ul>
+			<% @schedule.errors.full_messages.each do |msg| %>
+			  <li><%= msg %></li>
+			<% end %>
+		  </ul>
+		</div>
+	  <% end %>
 	</div>
 
 
