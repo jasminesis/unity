@@ -1,6 +1,7 @@
 <h1 class="display-4">Your free times</h1>
 <%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-lg btn-outline-light mb-3"})%>
 
+<% if @freetimes %>
 <table class="table">
 	<thead>
 		<tr>
@@ -10,7 +11,7 @@
 	</thead>
 	<tbody>
 		<% @freetimes.each do |d| %>
-		<% unless d.time.in_time_zone("Singapore") < DateTime.now() %>
+		<% unless d.time.in_time_zone("Singapore") < DateTime.now.in_time_zone("Singapore") %>
 		<tr>
 
 			<td><a href="/schedules">
@@ -26,3 +27,4 @@
 		<% end %>
 	</tbody>
 </table>
+<% end %>
