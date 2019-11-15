@@ -32,7 +32,7 @@
 
 				<p>
 					<%= check_box(:freetime, :time, {:multiple => true, :class => "mr-3"}, e, nil) %>
-					<%= f.label(e.end_of_hour().strftime("%I:00 %p - %I:%M %p %Z")) %>
+					<%= f.label(e.end_of_hour().strftime("%I:00 %p - %I:%M %p")) %>
 				</p>
 				<% end %>
 				<% end %>
