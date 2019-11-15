@@ -11,7 +11,7 @@ class SchedulesController < ApplicationController
     @list = @friend_a.concat(@friend_b)
     @friends = User.where("id IN (?)",@list)
     @datetime = DateTime.now()
-    
+
     if params[:user_id] && params[:date]
       puts "awesome"
       puts params[:user_id]
@@ -44,6 +44,12 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    @user_id = current_user.id
+
+    if @schedule.user_id == @user_id
+      @true = true
+    end
+
   end
 
   def edit

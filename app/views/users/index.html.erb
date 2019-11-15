@@ -4,21 +4,31 @@
 	<table class="table user-list">
 		<thead>
 			<tr>
-				<th><span>&nbsp;</span></th>
-				<th><span>User</span></th>
-				<th><span>Joined</span></th>
-				<th class="text-center"><span>Status</span></th>
-				<th class="text-center"><span>Online</span></th>
+
+			<th width="2px"><span>&nbsp;</span></th>
+			<th class="text-center" width="20px"><span>User</span></th>
+			<th class="text-center" width="2px"><span>Online</span></th>
+			<th class="text-center" ><span>Joined</span></th>
+			<th class="text-center"><span>Status</span></th>
+			<th class="text-center"><span>Liked Games</span></th>
+
 			</tr>
 		</thead>
 		<tbody>
 			<% @users.order("online_status DESC").each do |user| %>
 			<tr>
 				<td>
-					<%= image_tag 'default-avatar.png', class: "mr-2", width: "55px" %>
+
+				<%= image_tag 'default-avatar.png', class: "mr-2", width: "35px" %>
+				</td>
+				<td class="text-left">
+				<%= link_to user.username, user_path(user)%>
+
 				</td>
 				<td>
-					<%= link_to user.username, user_path(user)%>
+				<% if user.online_status == 'true' %>
+				<div class="online"></div>
+			<% end %>
 				</td>
 				<td><%= user.created_at %></td>
 				<td class="text-center">
@@ -30,11 +40,14 @@
 					<% end %>
 					<% end %>
 				</td>
-				<td>
-					<% if user.online_status == 'true' %>
-					<div class="online"></div>
-					<% end %>
-				</td>
+
+				<td style="max-width:200px">
+				<% user.games.each do |gameuser| %>
+						<button class="btn btn-rounded btn-success btn-sm ml-n3 mb-1" style="font-size: 0.7em;">
+							<%= gameuser.name %></a></button>
+						<% end %>
+
+				
 
 			</tr>
 			<% end %>

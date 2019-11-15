@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_and_belongs_to_many :schedules
 
+  has_many :schedules_user
   has_many :schedule
   has_many :freetime
 
