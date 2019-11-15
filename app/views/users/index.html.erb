@@ -4,11 +4,12 @@
 	<table class="table user-list">
 		<thead>
 			<tr>
-			<th><span>&nbsp;</span></th>
-			<th><span>User</span></th>
-			<th><span>Joined</span></th>
+			<th width="2px"><span>&nbsp;</span></th>
+			<th class="text-center" width="2px"><span>Online</span></th>
+			<th class="text-center" width="20px"><span>User</span></th>
+			<th class="text-center" ><span>Joined</span></th>
 			<th class="text-center"><span>Status</span></th>
-			<th class="text-center"><span>Online</span></th>
+			<th class="text-center"><span>Liked Games</span></th>
 			</tr>
 		</thead>
 		<tbody>
@@ -16,6 +17,11 @@
 			<tr>
 				<td>
 				<%= image_tag 'default-avatar.png', class: "mr-2", width: "55px" %>
+				</td>
+				<td>
+				<% if user.online_status == 'true' %>
+				<div class="online"></div>
+			<% end %>
 				</td>
 				<td>
 				<%= link_to user.username, user_path(user)%>
@@ -31,10 +37,11 @@
 				<% end %>
 				</td>
 				<td>
-				<% if user.online_status == 'true' %>
-				<div class="online"></div>
-			<% end %>
-				</td>
+				<% user.games.each do |gameuser| %>
+						<button class="btn btn-rounded btn-success btn-sm ml-n3" style="font-size: 0.7em;">
+							<a href='/games/<%= gameuser.id %>' class="text-white"><%= gameuser.name %></a></button>
+						<% end %>
+
 				
 			</tr>
 			<% end %>
