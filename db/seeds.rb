@@ -16,6 +16,16 @@ User.create!([
   {email: "2test@gmail.com", username: "2testuser", password: "password", admin: false},
   {email: "3test@gmail.com", username: "3testuser", password: "password", admin: false},
   {email: "4test@gmail.com", username: "4testuser", password: "password", admin: false},
+  {email: "5test@gmail.com", username: "5testuser", password: "password", admin: false},
+  {email: "6test@gmail.com", username: "6testuser", password: "password", admin: false},
+  {email: "7test@gmail.com", username: "7testuser", password: "password", admin: false},
+  {email: "8test@gmail.com", username: "8testuser", password: "password", admin: false},
+  {email: "9test@gmail.com", username: "9testuser", password: "password", admin: false},
+  {email: "10test@gmail.com", username: "10testuser", password: "password", admin: false},
+  {email: "11test@gmail.com", username: "11testuser", password: "password", admin: false},
+  {email: "12test@gmail.com", username: "12testuser", password: "password", admin: false},
+  {email: "13test@gmail.com", username: "13testuser", password: "password", admin: false},
+  {email: "14test@gmail.com", username: "14testuser", password: "password", admin: false},
   {email: "admin@gmail.com", username: "testadmin", password: "password", admin: true}
 ])
 
@@ -27,18 +37,17 @@ Game.create(name: "Fifa 2020", description: "FIFA 20 is a football simulation vi
 
 Friend.create!([
   {user_id: 1, friend_user_id: 2},
-  {user_id: 2, friend_user_id: 3}, 
-  {user_id: 4, friend_user_id: 3}, 
-  {user_id: 5, friend_user_id: 1}, 
+  {user_id: 2, friend_user_id: 3},
+  {user_id: 4, friend_user_id: 3},
+  {user_id: 5, friend_user_id: 1},
   {user_id: 5, friend_user_id: 2},
 ])
 
 GamesUser.create!([
   {user_id: 1, game_id: 2},
   {user_id: 1, game_id: 1},
-  {user_id: 5, game_id: 4}, 
+  {user_id: 5, game_id: 4},
   {user_id: 2, game_id: 1},
   {user_id: 1, game_id: 3},
-  {user_id: 5, game_id: 3}, 
+  {user_id: 5, game_id: 3},
 ])
-
