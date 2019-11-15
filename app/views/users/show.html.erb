@@ -2,23 +2,30 @@
 <%if @myself%>
 <p>Welcome back</p>
 <% else %>
-<%if @relationship.length == 0 %>
+
+<% if @relationship.length == 0 %>
+
 <%= link_to 'Add friend', "add/#{@user_id}" %>
+
 <% else %>
-<%= link_to 'Delete friend', "delete/#{@user_id}",
-	        method: :delete,
-	        data: { confirm: 'Are you sure?' } %>
+
+<button class="btn btn-danger mb-2">
+	<%= link_to 'Delete friend', "delete/#{@user_id}",
+	method: :delete,
+	data: { confirm: 'Are you sure?' } %>
+</button>
 <% end %>
 <% end %>
 
 <% if @user.freetime %>
-<div class="col-12" style="margin: 0 auto">
+<div class="col-8 p-2" style="margin: 0 auto; background-color: #111111; border-radius: 10px">
 
-	<h1 class="display-4"><%= @user.username %>'s Free Times</h1>
+	<h1 class="display-4 pt-2">Free times in common</h1>
 	<div class="col-12 d-flex flex-wrap">
 		<% @user.freetime.order("time ASC").each do |f| %>
+		<% @myfreetime.each do |myfree| %>
 
-		<% unless f.time.in_time_zone("Singapore") < DateTime.now.in_time_zone("Singapore") %>
+		<% if f.time.in_time_zone("Singapore") > DateTime.now.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
 
 		<!-- <% if false %> 
 			TODO: change so that only time slots in common will show up
@@ -32,6 +39,7 @@
 			<% end %>
 		</div>
 
+		<% end %>
 		<% end %>
 		<% end %>
 	</div>

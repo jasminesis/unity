@@ -21,6 +21,7 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @current_id = current_user.id
     @user_id = @user.id
+    @myfreetime = Freetime.where("user_id = #{current_user.id}").order('time ASC')
 
     if @user_id == @current_id
       @myself = "Myself"
