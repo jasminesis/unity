@@ -19,7 +19,7 @@
 			<a href="<%= schedule_path(schedule) %>">
 				<div class="event-title">
 
-					<strong><%= schedule.start_time.in_time_zone("Singapore").strftime("%l%P") %></strong> -
+					<strong><%= schedule.start_time.strftime("%l%P") %></strong> -
 
 					<%= schedule.event %>
 

@@ -3,8 +3,8 @@
 	<h1 class="display-4"><%= @schedule.event %></h1>
 
 	<h4> on
-		<%= @schedule.start_time.in_time_zone("Singapore").strftime("%A, %d %B %Y") %><br />
-		<%= @schedule.start_time.in_time_zone("Singapore").strftime("%I:%M %p") %>
+		<%= @schedule.start_time.strftime("%A, %d %B %Y") %><br />
+		<%= @schedule.start_time.strftime("%I:%M %p") %>
 	</h4>
 
 
