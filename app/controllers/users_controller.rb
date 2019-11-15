@@ -23,7 +23,7 @@ class UsersController < ApplicationController
     @myfreetime = Freetime.where("user_id = #{current_user.id}").order('time ASC')
 
     if @user_id == @current_id
-      @myself = "Myself"
+      redirect_to root_path
     else
       @relationship = Friend.where("(user_id = ? AND friend_user_id = ?) OR (user_id = ? AND friend_user_id = ?)", @user_id, @current_id, @current_id, @user_id)
     end

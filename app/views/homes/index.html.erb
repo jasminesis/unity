@@ -8,11 +8,15 @@
 
 <div class="container-fluid">
 	<div class="row d-flex justify-content-around">
-		<div class="col-7 m-3 p-4" style="background-color: #111111; border-radius: 10px">
-			<div class="row">
-				<div class="col-12">
-					<p class="home-title">Upcoming Games</p>
 
+		<div class="col-sm-12 col-lg-7 m-3 p-4" style="background-color: #111111; border-radius: 10px">
+			<div >
+				<p class="home-title">Upcoming Games</p>
+				<a class="btn btn-dark btn-block mx-auto my-3" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new event</a>
+			</div>
+
+			<div class="row">
+				<div class="col-12" style="max-height: 30vh; overflow: scroll">
 					<% @schedules.each do |schedule| %>
 						<p>
 							<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
@@ -32,7 +36,6 @@
 						</p>
 					<% end %>
 
-
 						<% @friend_schedule.each do |schedule| %>
 							<p>
 								<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white"><%= schedule.event %><br/>
@@ -41,31 +44,30 @@
 								</a>
 							</p>
 						<% end %>
-
-
-					<a class="btn btn-dark btn-block mx-auto" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new
-						event</a>
-
 				</div>
 			</div>
 
 		</div>
 
-		<div class="col-4 m-3 rounded" style="background-color: #111111; border-radius: 10px">
+
+		<div class="col-sm-12 col-lg-4 m-3 rounded"style="background-color: #111111; border-radius: 10px; max-height: 50vh;">
 			<p class="home-title mt-3">Friends</p>
-
-			<% @friends.each do |friend| %>
-			<a class="btn btn-outline-dark btn-block justify-content-center my-3" href="<%= user_path(friend) %>">
-				<% if friend.online_status == 'true' %>
-				<div class="online"></div>
-				<% end %>
-				<p class="d-inline-block align-middle my-0 p-2" style="color: white">
-					<%= image_tag("default-avatar.png", :class => "mr-2", :width => "30px") %>
-
-					<%= friend.username %></p>
-				<% end %>
-			</a>
 			<a class="btn btn-dark btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add new friends</a>
+			<div style="max-height: 30vh; overflow: scroll">
+
+
+				<% @friends.each do |friend| %>
+				<a class="btn btn-outline-dark btn-block justify-content-center my-3" href="<%= user_path(friend) %>">
+					<% if friend.online_status == 'true' %>
+					<div class="online"></div>
+					<% end %>
+					<p class="d-inline-block align-middle my-0 p-2" style="color: white">
+						<%= image_tag("default-avatar.png", :class => "mr-2", :width => "30px") %>
+
+						<%= friend.username %></p>
+					<% end %>
+				</a>
+			</div>
 		</div>
 	</div>
 </div>
