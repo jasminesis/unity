@@ -9,8 +9,6 @@ class HomesController < ApplicationController
     @list = @friend_a.concat(@friend_b)
     @friends = User.where("id IN (?)",@list)
 
-
-
     @schedules = Schedule.where("user_id = #{current_user.id}")
   end
 end
