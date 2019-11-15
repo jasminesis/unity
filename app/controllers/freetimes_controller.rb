@@ -2,7 +2,7 @@
 
 class FreetimesController < ApplicationController
   def index
-    @freetimes = Freetime.where("user_id = #{current_user.id}")
+    @freetimes = Freetime.where("user_id = #{current_user.id}").order('time ASC')
   end
 
   def new

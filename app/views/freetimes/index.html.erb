@@ -1,30 +1,30 @@
 <h1 class="display-4">Your free times</h1>
+<%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-lg btn-outline-light mb-3"})%>
 
+<% if @freetimes %>
 <table class="table">
 	<thead>
 		<tr>
 			<th scope="col">Times</th>
-			<th scope="col">Delete</th>
+			<th scope="col">Destroy</th>
 		</tr>
 	</thead>
 	<tbody>
 		<% @freetimes.each do |d| %>
+		<% unless d.time.in_time_zone("Singapore") < DateTime.now.in_time_zone("Singapore") %>
 		<tr>
 
-			<td><%= d.time.in_time_zone("Singapore").strftime("%e %b - %I %p") %></td>
-			<td>
-				<%= link_to 'Destroy',  { action: :destroy, id: d.id }, method: :delete, data: { confirm: 'Are you sure?' } %><i
-					class='fas fa-trash-alt'></i>
+			<td><a href="/schedules">
+					<%= d.time.in_time_zone("Singapore").strftime("%e %b || %I:00 %p") %></a>
 			</td>
+			<td>
+				<%= link_to '<i class="fas fa-trash-alt"></i>'.html_safe, { action: :destroy, id: d.id }, method: :delete, data: { confirm: 'Are you sure?' } %>
+			</td>
+
 
 		</tr>
 		<% end %>
+		<% end %>
 	</tbody>
 </table>
-
-
-
-
-
-
-<%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-lg btn-outline-light m-3"})%>
+<% end %>

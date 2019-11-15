@@ -87,3 +87,35 @@ a {
 	background-color: black;
 	border: 2px solid black;
 }
+
+.icons-lg {
+	font-size: 1.5rem;
+}
+
+span.icons-lg:hover {
+	color: white;
+	text-decoration: none;
+}
+
+.games-index {
+
+	a>i {
+		color: black;
+	}
+}
+
+p.home-title {
+	font-size: 1.7rem;
+	font-family: 'ZCOOL KuaiLe', cursive;
+
+}
+
+div.free-time-card {
+
+	color: white;
+
+	a:hover {
+		color: white;
+	}
+
+}
