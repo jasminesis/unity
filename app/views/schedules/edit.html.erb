@@ -9,6 +9,7 @@
 
 	<%= form_with scope: :schedule, model: @schedule, local: true do |form| %>
 	<div class="form-group">
+
 		<%= form.label :event %><br />
 		<%= form.text_field(:event, {:class => "form-control", :value => @schedule.event}) %>
 		<% if @schedule.errors.any? %>
