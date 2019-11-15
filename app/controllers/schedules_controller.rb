@@ -12,6 +12,7 @@ class SchedulesController < ApplicationController
     @friends = User.where("id IN (?)",@list)
     @datetime = DateTime.now()
 
+
     if params[:user_id] && params[:date]
       puts "awesome"
       puts params[:user_id]
