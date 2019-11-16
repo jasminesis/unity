@@ -1,0 +1,57 @@
+// Place all the styles related to the homes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.mybtn{
+	font-weight: bold;
+	font-size: 20px;
+	color: #FFF;
+	text-align: center;
+	text-decoration: none;
+	box-sizing: border-box;
+	background: linear-gradient(90deg, #03A9F4, #F441A5, #FFEB3B, #03A9F4);
+	background-size: 400%;
+	border-radius: 5px;
+	line-height: 50px;
+	z-index: 2;
+}
+
+a{
+	text-decoration: none;
+	z-index: 2;
+}
+
+.mybtn:hover{
+	animation: buttonpulse 10s linear infinite;
+	text-decoration: none;
+}
+
+.mybtn:before{
+	content: "";
+	position: absolute;
+	top: -1px;
+	bottom: -1px;
+	left: -1px;
+	right: -1px;
+	background: linear-gradient(90deg, #03A9F4, #F441A5, #FFEB3B, #03A9F4);
+	background-size: 400%;
+	border-radius: 1px;
+	z-index: 1;
+	opacity: 0;
+	transition: 0.7s;
+}
+
+.mybtn:hover:before{
+	filter: blur(30px);
+	opacity: 0.6;
+}
+
+@keyframes buttonpulse
+{
+	0%{
+		background-position: 0%;
+	}
+	100%{
+		background-position: 400%;
+	}
+}
