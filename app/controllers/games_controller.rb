@@ -3,7 +3,13 @@ class GamesController < ApplicationController
   # GET /games
   # GET /games.json
   def index
+    thesearch = params[:search]
+    if thesearch != nil
+    thesearch = thesearch.downcase
+    @games = Game.where(["lower(name) LIKE ?", "%#{thesearch}%"])
+    else 
     @games = Game.all
+    end
 
     if user_signed_in?
     # # get all your friends in an array
