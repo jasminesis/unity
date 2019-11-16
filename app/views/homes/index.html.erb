@@ -1,5 +1,4 @@
-<div class="jumbotron jumbotron-fluid"
-	style="background: linear-gradient(to right, #EC0011 0%, #4D0009 100%); border-radius: 10px">
+<div class="jumbotron jumbotron-fluid " style="background: linear-gradient(to right, #EC0011 0%, #4D0009 100%); border-radius: 10px">
 	<div class="container">
 		<h1 class="display-4">Unity</h1>
 		<p class="lead">Find friends with Unity, schedule time to play together</p>
@@ -12,9 +11,8 @@
 		<div class="col-sm-12 col-lg-7 m-3 p-4" style="background-color: #111111; border-radius: 10px">
 			<div >
 				<p class="home-title">Upcoming Games</p>
-				<a class="btn btn-dark btn-block mx-auto my-3" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new event</a>
+				<div class="col-12 p-0"><a class="mybtn btn-block mx-auto my-3" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new event</a></div>
 			</div>
-
 			<div class="row">
 				<div class="col-12" style="max-height: 30vh; overflow: scroll">
 					<% @schedules.each do |schedule| %>
@@ -52,7 +50,7 @@
 
 		<div class="col-sm-12 col-lg-4 m-3 rounded"style="background-color: #111111; border-radius: 10px; max-height: 50vh;">
 			<p class="home-title mt-3">Friends</p>
-			<a class="btn btn-dark btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add new friends</a>
+			<div class="col-12 p-0"><a class="mybtn btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add new friends</a></div>
 			<div style="max-height: 30vh; overflow: scroll">
 
 
