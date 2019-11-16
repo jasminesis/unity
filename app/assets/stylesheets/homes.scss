@@ -42,6 +42,7 @@ a{
 }
 
 .mybtn:hover:before{
+	animation: buttonpulse 10s linear infinite;
 	filter: blur(30px);
 	opacity: 0.6;
 }
