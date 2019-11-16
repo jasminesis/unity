@@ -7,7 +7,10 @@ class UsersController < ApplicationController
       @games = Game.all
       # @users = User.where(:username => @params)
       # @users = User.search(params[:search])
-      @users = User.where(["username LIKE ?", "%#{params[:search]}%"])
+
+      thesearch = params[:search]
+      thesearch = thesearch.downcase
+      @users = User.where(["lower(username) LIKE ?", "%#{thesearch}%"])
       @mygames = GamesUser.where(user_id: current_user.id).pluck(:game_id)
       #find all my friends!
       if user_signed_in?
