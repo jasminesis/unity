@@ -1,4 +1,5 @@
-<div class="jumbotron jumbotron-fluid " style="background: linear-gradient(to right, #EC0011 0%, #4D0009 100%); border-radius: 10px">
+<div class="jumbotron jumbotron-fluid "
+	style="background: linear-gradient(to right, #EC0011 0%, #4D0009 100%); border-radius: 10px">
 	<div class="container">
 		<h1 class="display-4">Unity</h1>
 		<p class="lead">Find friends with Unity, schedule time to play together</p>
@@ -9,48 +10,52 @@
 	<div class="row d-flex justify-content-around">
 
 		<div class="col-sm-12 col-lg-7 m-3 p-4" style="background-color: #111111; border-radius: 10px">
-			<div >
+			<div>
 				<p class="home-title">Upcoming Games</p>
-				<div class="col-12 p-0"><a class="mybtn btn-block mx-auto my-3" href="<%= schedules_path %>"><i class="fas fa-plus"></i> Add new event</a></div>
+				<div class="col-12 p-0"><a class="mybtn btn-block mx-auto my-3" href="<%= schedules_path %>"><i
+							class="fas fa-plus"></i> Add new event</a></div>
 			</div>
 			<div class="row">
 				<div class="col-12" style="max-height: 30vh; overflow: scroll">
 					<% @schedules.each do |schedule| %>
-						<p>
-							<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
-								<%= schedule.event %><br />
-								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %>
-								<% if schedule.users.length > 0 %>
-									<br />with
-									<% schedule.users.each_with_index do |users, index| %>
-										<% if index >= 1 %>
-											& <%= users.username %>
-										<% else %>
-											<%= users.username %>
-										<% end %>
-									<% end %>
-								<% end %>
-							</a>
-						</p>
+					<p>
+						<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
+							<%= schedule.event %><br />
+							<%= schedule.start_time.strftime("%e %b - %I:00 %p") %>
+							<% if schedule.users.length > 0 %>
+							<br />with
+							<% schedule.users.each_with_index do |users, index| %>
+							<% if index >= 1 %>
+							& <%= users.username %>
+							<% else %>
+							<%= users.username %>
+							<% end %>
+							<% end %>
+							<% end %>
+						</a>
+					</p>
 					<% end %>
 
-						<% @friend_schedule.each do |schedule| %>
-							<p>
-								<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white"><%= schedule.event %><br/>
-								<%= schedule.start_time.in_time_zone("Singapore").strftime("%e %b - %I:00 %p") %><br/>
-								invited by: <%= schedule.user.username%>
-								</a>
-							</p>
-						<% end %>
+					<% @friend_schedule.each do |schedule| %>
+					<p>
+						<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>"
+							style="color: white"><%= schedule.event %><br />
+							<%= schedule.start_time.strftime("%e %b - %I:00 %p") %><br />
+							invited by: <%= schedule.user.username%>
+						</a>
+					</p>
+					<% end %>
 				</div>
 			</div>
 
 		</div>
 
 
-		<div class="col-sm-12 col-lg-4 m-3 rounded"style="background-color: #111111; border-radius: 10px; max-height: 50vh;">
+		<div class="col-sm-12 col-lg-4 m-3 rounded"
+			style="background-color: #111111; border-radius: 10px; max-height: 50vh;">
 			<p class="home-title mt-3">Friends</p>
-			<div class="col-12 p-0"><a class="mybtn btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add new friends</a></div>
+			<div class="col-12 p-0"><a class="mybtn btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add
+					new friends</a></div>
 			<div style="max-height: 30vh; overflow: scroll">
 
 

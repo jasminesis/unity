@@ -1,35 +1,40 @@
 <h1 class="display-4"><%= @user.username %></h1>
-<%if @myself%>
+<% if @myself %>
 <p>Welcome back</p>
+
 <% else %>
+<%-# FOR USERS WHO ARE NOT ME  -%>
 
 <% if @relationship.length == 0 %>
+<%-# FOR USERS WHO ARE NOT YET MY FRIEND  -%>
+
 <button class="btn-lg btn-danger mb-2">
-<%= link_to 'Add friend', "add/#{@user_id}" %>
+	<%= link_to 'Add friend', "add/#{@user_id}" %>
 </button>
+
 <% else %>
+<%-# FOR MY FRIENDS -%>
 
 <button class="btn-lg btn-danger mb-2">
 	<%= link_to 'Delete friend', "delete/#{@user_id}",
 	method: :delete,
 	data: { confirm: 'Are you sure?' } %>
 </button>
-<% end %>
-<% end %>
 
-<% if @user.freetime %>
+
+
+<% @user.freetime.order("time ASC").each do |f| %>
+<% @myfreetime.each do |myfree| %>
+
+<%-# Checks if our freetimes are at the same time, and that they are in the future -%>
+
+<% if f.time.in_time_zone("Singapore") > DateTime.now.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
+
 <div class="col-8 p-2" style="margin: 0 auto; background-color: #111111; border-radius: 10px">
 
 	<h1 class="display-4 pt-2">Free times in common</h1>
 	<div class="col-12 d-flex flex-wrap">
-		<% @user.freetime.order("time ASC").each do |f| %>
-		<% @myfreetime.each do |myfree| %>
 
-		<% if f.time.in_time_zone("Singapore") > DateTime.now.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
-
-		<!-- <% if false %>
-			TODO: change so that only time slots in common will show up
-			<% end %> -->
 
 		<div class="btn btn-outline-dark btn-block justify-content-center my-3 free-time-card m-2">
 			<%= link_to("#{@user_id}/schedules/new?date=#{f.time.in_time_zone("Singapore")}") do %>
@@ -43,4 +48,5 @@
 		<% end %>
 		<% end %>
 	</div>
+	<% end %>
 	<% end %>
