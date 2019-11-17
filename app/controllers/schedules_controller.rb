@@ -1,7 +1,8 @@
 class SchedulesController < ApplicationController
 
   def index
-    @schedules = Schedule.where("user_id = #{current_user.id}")
+    @schedule_ids = SchedulesUser.where("user_id = #{current_user.id}").map{|x|x.schedule_id}
+    @schedules = Schedule.where("user_id = ? OR id In (?)", current_user.id, @schedule_ids)
   end
 
   def new
