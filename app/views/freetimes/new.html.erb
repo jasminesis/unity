@@ -1,7 +1,7 @@
 <div class="freetimes">
 	<h1 class="display-4">Choose free time slots</h1>
 
-	<% unless @datetime.to_date == DateTime.now.to_date %>
+	<% unless @datetime.to_date == DateTime.current.to_date %>
 
 	<a href=" ?counter=decrease"><span class="icons-lg">&#x2190;</span></a>
 	<% end %>
@@ -10,7 +10,7 @@
 	</span>
 
 	<a href="?counter=increase"><span class="icons-lg">&#x2192;</span></a>
-	<% if @datetime.to_date != DateTime.now.to_date %>
+	<% if @datetime.to_date != DateTime.current.to_date %>
 	<br />
 	<a href="/freetimes/new"><button class="btn btn-outline-light mt-2">Today</button></a>
 	<% end %>

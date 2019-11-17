@@ -28,7 +28,7 @@
 
 <%-# Checks if our freetimes are at the same time, and that they are in the future -%>
 
-<% if f.time.in_time_zone("Singapore") > DateTime.now.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
+<% if f.time.in_time_zone("Singapore") > DateTime.current.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
 
 <div class="col-8 p-2" style="margin: 0 auto; background-color: #111111; border-radius: 10px">
 

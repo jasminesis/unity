@@ -10,7 +10,7 @@ class SchedulesController < ApplicationController
     @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
     @list = @friend_a.concat(@friend_b)
     @friends = User.where("id IN (?)",@list)
-    @datetime = DateTime.now()
+    @datetime = DateTime.current()
 
 
     if params[:user_id] && params[:date]
@@ -38,7 +38,7 @@ class SchedulesController < ApplicationController
       @friend_b = Friend.where(:friend_user_id => current_user.id).map{|x|x.user_id}
       @list = @friend_a.concat(@friend_b)
       @friends = User.where("id IN (?)",@list)
-      @datetime = DateTime.now()
+      @datetime = DateTime.current()
 
       render "new"
     end

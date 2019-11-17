@@ -8,13 +8,13 @@ class FreetimesController < ApplicationController
   def new
     if params[:counter] == "increase"
       session[:freetime_counter] = session[:freetime_counter] + 1
-      @datetime = DateTime.now.beginning_of_day().advance(:days => session[:freetime_counter])
+      @datetime = DateTime.current.beginning_of_day().advance(:days => session[:freetime_counter])
     elsif params[:counter] == "decrease"
       session[:freetime_counter] = session[:freetime_counter] - 1
-      @datetime = DateTime.now.beginning_of_day().advance(:days => session[:freetime_counter])
+      @datetime = DateTime.current.beginning_of_day().advance(:days => session[:freetime_counter])
     else
       session[:freetime_counter] = 0
-      @datetime = DateTime.now
+      @datetime = DateTime.current
     end 
    end
 
