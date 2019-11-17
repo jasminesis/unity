@@ -22,6 +22,11 @@
 					<strong><%= schedule.start_time.strftime("%l%P") %></strong> -
 
 					<%= schedule.event %>
+					<% if schedule.user_id != current_user.id %>
+					invited by
+					<%= schedule.user.username %>
+					<% else %>
+
 
 					<% if schedule.users.length > 0 %>
 					with
@@ -30,6 +35,7 @@
 					& <%= users.username %>
 					<% else %>
 					<%= users.username %>
+					<% end %>
 					<% end %>
 					<% end %>
 			</a>
