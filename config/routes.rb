@@ -17,8 +17,10 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root 'homes#index'
 
+  get '/homes/api' => 'homes#api'
+
   resources :users do
-    resources :schedules, only: [:new]
+  resources :schedules, only: [:new]
   end
 
   get '/users/add/:id' => 'friends#create'
