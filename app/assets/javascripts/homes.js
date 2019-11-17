@@ -1,5 +1,3 @@
-console.log("working")
-
 function refresh(){
     var div = document.getElementById("friendDiv")
     var child = div.querySelectorAll("a")
@@ -29,10 +27,9 @@ function refresh(){
     }
 
     var requestFailed = function(){
-        console.log("response text", this.responseText);
-        console.log("status text", this.statusText);
-        console.log("status code", this.status);
+
     }
+
     request.addEventListener("load", responseHandler);
     request.addEventListener("error",requestFailed);
     request.send();
