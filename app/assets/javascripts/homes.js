@@ -1,4 +1,4 @@
-function refresh(){
+function refresh() {
     var div = document.getElementById("friendDiv")
     var child = div.querySelectorAll("a")
     var request = new XMLHttpRequest();
@@ -9,31 +9,25 @@ function refresh(){
         "application/json;charset=UTF-8"
     );
 
-    var responseHandler = function(){
+    var responseHandler = function () {
         var response = JSON.parse(this.responseText)
-        for (var i = 0; i < child.length; i++){
-            if (response[i].online_status === "true"){
-                if(child[i].childNodes.length < 4){
+        for (var i = 0; i < child.length; i++) {
+            if (response[i].online_status === "true") {
+                if (child[i].childNodes.length < 4) {
                     var online = document.createElement("div");
                     online.className = "online";
                     child[i].prepend(online)
                 }
-            } else if (response[i].online_status === "false"){
-                if(child[i].childNodes.length > 3){
+            } else if (response[i].online_status === "false") {
+                if (child[i].childNodes.length > 3) {
                     child[i].removeChild(child[i].childNodes[0])
                 }
             }
         }
     }
 
-    var requestFailed = function(){
-
-    }
-
     request.addEventListener("load", responseHandler);
-    request.addEventListener("error",requestFailed);
     request.send();
 }
 
-
-setInterval(refresh, 1000)
+setInterval(refresh, 30000)
