@@ -26,9 +26,10 @@
 			<% date_time_limit = @datetime.end_of_day() %>
 
 			<div class="d-flex flex-column flex-wrap justify-content-start align-items-stretch p-4" style="height: 65vh">
-				<% date_time.step(date_time_limit,hour_step).each_with_index do |e, index| %>
+			<% date_time.step(date_time_limit,hour_step).each_with_index do |e, index| %>
 
 				<% unless index == 0 %>
+				<% unless @userfreetimes.include? e %> 
 
 				<p>
 					<%= check_box(:freetime, :time, {:multiple => true, :class => "mr-3"}, e, nil) %>
@@ -36,9 +37,15 @@
 				</p>
 				<% end %>
 				<% end %>
+				<% end %>
 			</div>
 
 		</div>
+
+<p class="error">
+  <%= show_errors(@freetime, :time) %>
+</p>
+
 		<div class="form-group">
 			<%= f.submit({:class => "btn btn-danger"}) %>
 		</div>

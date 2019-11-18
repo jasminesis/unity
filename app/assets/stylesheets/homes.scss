@@ -2,6 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
 // <----------------- POST LOGIN ----------------->
 
@@ -14,12 +15,12 @@
 	overflow: hidden;
 }
 
-.pulsation span{
+.pulsation span {
 	position: absolute;
 	display: block;
 }
 
-.pulsation span:nth-child(1){
+.pulsation span:nth-child(1) {
 	top: 0;
 	left: -30%;
 	width: 30%;
@@ -27,13 +28,13 @@
 	background: linear-gradient(90deg, transparent, white);
 }
 
-.pulsation:hover span:nth-child(1){
+.pulsation:hover span:nth-child(1) {
 	animation: kfleft 2s linear infinite;
 	transition: 1s;
 	animation-delay: 0.8s;
 }
 
-.pulsation span:nth-child(2){
+.pulsation span:nth-child(2) {
 	top: -100%;
 	right: 0;
 	width: 4px;
@@ -41,12 +42,12 @@
 	background: linear-gradient(180deg, transparent, white);
 }
 
-.pulsation:hover span:nth-child(2){
+.pulsation:hover span:nth-child(2) {
 	animation: kftop 2s linear infinite;
 	transition: 1s;
 }
 
-.pulsation span:nth-child(3){
+.pulsation span:nth-child(3) {
 	bottom: 0;
 	right: -30%;
 	width: 30%;
@@ -54,13 +55,13 @@
 	background: linear-gradient(270deg, transparent, white);
 }
 
-.pulsation:hover span:nth-child(3){
+.pulsation:hover span:nth-child(3) {
 	animation: kfright 2s linear infinite;
 	transition: 1s;
 	animation-delay: 0.8s;
 }
 
-.pulsation span:nth-child(4){
+.pulsation span:nth-child(4) {
 	bottom: -100%;
 	left: 0;
 	width: 4px;
@@ -68,56 +69,53 @@
 	background: linear-gradient(360deg, transparent, white);
 }
 
-.pulsation:hover span:nth-child(4){
+.pulsation:hover span:nth-child(4) {
 	animation: kfbottom 2s linear infinite;
 	transition: 1s;
 }
-@keyframes kfleft
-{
-	40%{
+
+@keyframes kfleft {
+	40% {
 		left: 100%;
 	}
 
-	100%{
+	100% {
 		left: 100%;
 	}
 }
 
-@keyframes kftop
-{
-	40%{
+@keyframes kftop {
+	40% {
 		top: 100%;
 	}
 
-	100%{
+	100% {
 		top: 100%;
 	}
 }
 
-@keyframes kfright
-{
-	40%{
+@keyframes kfright {
+	40% {
 		right: 100%;
 	}
 
-	100%{
+	100% {
 		right: 100%;
 	}
 }
 
-@keyframes kfbottom
-{
-	40%{
+@keyframes kfbottom {
+	40% {
 		bottom: 100%;
 	}
 
-	100%{
+	100% {
 		bottom: 100%;
 	}
 }
 
 
-.mybtn{
+.mybtn {
 	font-weight: bold;
 	font-size: 20px;
 	color: #FFF;
@@ -131,17 +129,17 @@
 	z-index: 2;
 }
 
-a{
+a {
 	text-decoration: none;
 	z-index: 2;
 }
 
-.mybtn:hover{
+.mybtn:hover {
 	animation: buttonpulse 10s linear infinite;
 	text-decoration: none;
 }
 
-.mybtn:before{
+.mybtn:before {
 	content: "";
 	position: absolute;
 	top: -1px;
@@ -156,18 +154,18 @@ a{
 	transition: 0.7s;
 }
 
-.mybtn:hover:before{
+.mybtn:hover:before {
 	animation: buttonpulse 10s linear infinite;
 	filter: blur(30px);
 	opacity: 0.6;
 }
 
-@keyframes buttonpulse
-{
-	0%{
+@keyframes buttonpulse {
+	0% {
 		background-position: 0%;
 	}
-	100%{
+
+	100% {
 		background-position: 400%;
 	}
 }
@@ -349,4 +347,83 @@ a:hover{
 }
 .myCard:nth-child(5) .face.face2{
 	background: linear-gradient(45deg, #E02B6B, #64D8E3);
+}
+
+body {
+	background-image: asset-url('red-bg.jpg');
+	color: white;
+	font-family: 'Nunito', sans-serif;
+}
+
+a {
+	color: white;
+	// color: black;
+}
+
+a:hover {
+	color: white;
+}
+
+
+.fun-hover ul li a {
+	border-top: 1px solid rgba(0, 0, 0, 0);
+	margin: 4px;
+}
+
+.fun-hover ul li a:after {
+	color: #f0a;
+	/* code for &raquo; */
+	display: block;
+	float: right;
+	opacity: 0;
+	overflow: hidden;
+	width: 0;
+}
+
+.fun-hover ul li a:hover {
+	background: rgb(179, 37, 58);
+	color: white;
+	border-radius: 3px;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.fun-hover ul li a:hover:after {
+	opacity: 1;
+	width: 20px;
+}
+
+.navbar-brand {
+	font-family: 'ZCOOL KuaiLe', cursive;
+	color: rgb(179, 37, 58);
+	font-size: 2rem;
+}
+
+.navbar-brand:hover {
+	color: red;
+}
+
+.nav-link:hover {
+	color: rgb(179, 37, 58);
+}
+
+.card {
+	background-color: black;
+	border: 2px solid black;
+}
+
+.icons-lg {
+	font-size: 1.5rem;
+}
+
+span.icons-lg:hover {
+	color: white;
+	text-decoration: none;
+}
+
+p.home-title {
+	font-size: 1.7rem;
+	font-family: 'ZCOOL KuaiLe', cursive;
 }
