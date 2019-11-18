@@ -1,4 +1,4 @@
-# README
+# Unity
 
 ## Technologies used
 - Ruby on Rails (Version 2.5.1)
