@@ -39,6 +39,19 @@
 			</div>
 
 		</div>
+
+<% if show_errors(@freetime, :time) %>
+
+		<div class="error alert-danger text-left">
+		    <ul>error?
+			<% @freetime.errors.full_messages.each do |msg| %>
+			  <li><%= msg %></li>
+			<% end %>
+		  </ul>
+		</div>
+
+	  <% end %>
+
 		<div class="form-group">
 			<%= f.submit({:class => "btn btn-danger"}) %>
 		</div>
