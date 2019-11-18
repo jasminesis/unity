@@ -1,10 +1,12 @@
 // Place all the styles related to the Games controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
 .games-index {
+    a>i {
+        color: black;
+    }
+}
 
-	a>i {
-		color: black;
-	}
+.form-rounded {
+    border-radius: 1rem;
 }
