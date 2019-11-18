@@ -18,11 +18,13 @@
 		<div class="col-sm-12 col-lg-7 m-3 p-4" style="background-color: #111111; border-radius: 10px">
 			<div>
 				<p class="home-title">Upcoming Games</p>
-				<div class="col-12 p-0"><a class="mybtn btn-block mx-auto my-3" href="<%= new_schedule_path %>"><i class="fas fa-plus"></i> Add new event</a></div>
+				<div class="col-12 p-0"><a class="mybtn btn-block mx-auto my-3" href="<%= new_schedule_path %>"><i
+							class="fas fa-plus"></i> Add new event</a></div>
 			</div>
 			<div class="row">
 				<div class="col-12 scrollable" style="max-height: 30vh; overflow-y: auto;">
 					<% @schedules.each do |schedule| %>
+					<% unless schedule.start_time.in_time_zone("Singapore") < DateTime.current.in_time_zone("Singapore") %>
 					<p>
 						<a class="btn d-block btn-outline-dark" href="<%= schedule_path(schedule) %>" style="color: white">
 							<%= schedule.event %><br />
@@ -39,6 +41,7 @@
 							<% end %>
 						</a>
 					</p>
+					<% end %>
 					<% end %>
 
 					<% @friend_schedule.each do |schedule| %>
@@ -58,7 +61,8 @@
 
 		<div class="col-sm-12 col-lg-4 m-3 p-4 rounded" style="background-color: #111111; border-radius: 10px;">
 			<p class="home-title mt-0">Friends</p>
-			<div class="col-12 p-0"><a class="mybtn btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add new friends</a></div>
+			<div class="col-12 p-0"><a class="mybtn btn-block my-3" href="<%= users_path %>"><i class="fas fa-plus"></i> Add
+					new friends</a></div>
 			<div style="max-height: 30vh; overflow-y: auto" id="friendDiv">
 
 

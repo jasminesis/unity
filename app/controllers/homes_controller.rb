@@ -11,7 +11,7 @@ class HomesController < ApplicationController
       @friends = User.where("id IN (?)",@list).order("id ASC")
 
 
-      @schedules = Schedule.where("user_id = #{current_user.id}")
+      @schedules = Schedule.where("user_id = #{current_user.id}").order('start_time ASC')
       @schedule_ids = SchedulesUser.where("user_id = #{current_user.id}").map{|x|x.schedule_id}
       @friend_schedule = Schedule.where("id In (?)", @schedule_ids)
     else
