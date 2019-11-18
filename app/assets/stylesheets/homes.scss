@@ -4,6 +4,15 @@
 
 
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
+
+
+
+
+p.home-title {
+	font-size: 1.7rem;
+	font-family: 'ZCOOL KuaiLe', cursive;
+}
+
 // <----------------- POST LOGIN ----------------->
 
 .homeJumbo{
@@ -171,66 +180,6 @@ a {
 }
 
 // <----------------- PRE LOGIN ----------------->
-.bubbles{
-	position: relative;
-	width: 10vw;
-	height: 10vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.bubbles span:nth-child(1){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 102%;
-	height: 102%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin 9s linear infinite;
-}
-
-.bubbles:hover span:nth-child(1){
-	border: none;
-	background: rgba(180,0,15,0.6);
-}
-
-.bubbles span:nth-child(2){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 98%;
-	height: 98%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin2 7s linear infinite;
-}
-
-.bubbles:hover span:nth-child(2){
-	border: none;
-	background: rgba(200,15,12,0.4);
-}
-
-.bubbles span:nth-child(3){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin 5s linear infinite;
-}
-
-.bubbles:hover span:nth-child(3){
-	border: none;
-	background: rgba(160,0,12,0.8);
-}
-
 @keyframes spin
 {
 	0%
@@ -255,15 +204,6 @@ a {
 	}
 }
 
-.bubblesContent{
-	color: white;
-	z-index: 1;
-}
-
-.bubblesContent h2{
-	font-size: 1.5vw;
-}
-
 a:hover{
 	text-decoration: none;
 }
@@ -273,6 +213,155 @@ a:hover{
 	margin: 0 auto;
 }
 
+// <----------------- Signup ----------------->
+.bubbles{
+	position: relative;
+	width: 10vw;
+	height: 10vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bubbles span:nth-child(1){
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 102%;
+	height: 102%;
+	border: 2px solid white;
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+	transition: 0.5s;
+	animation: spin 9s linear infinite;
+}
+
+.bubbles:hover span:nth-child(1){
+	border: none;
+	background: rgba(180,0,15,0.7);
+}
+
+.bubbles span:nth-child(2){
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 98%;
+	height: 98%;
+	border: 2px solid white;
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+	transition: 0.5s;
+	animation: spin2 7s linear infinite;
+}
+
+.bubbles:hover span:nth-child(2){
+	border: none;
+	background: rgba(200,15,12,0.6);
+}
+
+.bubbles span:nth-child(3){
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid white;
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+	transition: 0.5s;
+	animation: spin 5s linear infinite;
+}
+
+.bubbles:hover span:nth-child(3){
+	border: none;
+	background: rgba(160,0,12,0.8);
+}
+
+
+.bubblesContent{
+	color: white;
+	z-index: 1;
+}
+
+.bubblesContent h2{
+	font-size: 1.5vw;
+}
+
+// <----------------- Login ----------------->
+
+.bubbles2{
+	position: relative;
+	width: 5vw;
+	height: 5vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.bubbles2 span:nth-child(1){
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 102%;
+	height: 102%;
+	border: 2px solid white;
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+	transition: 0.5s;
+	animation: spin 9s linear infinite;
+}
+
+.bubbles2:hover span:nth-child(1){
+	border: none;
+	background: #4989E3;
+	opacity: 0.6;
+}
+
+.bubbles2 span:nth-child(2){
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 98%;
+	height: 98%;
+	border: 2px solid white;
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+	transition: 0.5s;
+	animation: spin2 7s linear infinite;
+}
+
+.bubbles2:hover span:nth-child(2){
+	border: none;
+	background: #4989E3;
+	opacity: 0.8;
+}
+
+.bubbles2 span:nth-child(3){
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border: 2px solid white;
+	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+	transition: 0.5s;
+	animation: spin 5s linear infinite;
+}
+
+.bubbles2:hover span:nth-child(3){
+	border: none;
+	background: #4989E3;
+}
+
+
+.bubblesContent2{
+	color: white;
+	z-index: 1;
+}
+
+.bubblesContent2 h2{
+	font-size: .8vw;
+}
+
+
+
+
+// <--------------- CARD --------------->
 .myCard{
 	font-family: 'Poppins', sans-serif;
 	position: relative;
@@ -349,81 +438,7 @@ a:hover{
 	background: linear-gradient(45deg, #E02B6B, #64D8E3);
 }
 
-body {
-	background-image: asset-url('red-bg.jpg');
-	color: white;
-	font-family: 'Nunito', sans-serif;
-}
-
-a {
-	color: white;
-	// color: black;
-}
-
-a:hover {
-	color: white;
-}
-
-
-.fun-hover ul li a {
-	border-top: 1px solid rgba(0, 0, 0, 0);
-	margin: 4px;
-}
-
-.fun-hover ul li a:after {
-	color: #f0a;
-	/* code for &raquo; */
-	display: block;
-	float: right;
-	opacity: 0;
-	overflow: hidden;
-	width: 0;
-}
-
-.fun-hover ul li a:hover {
-	background: rgb(179, 37, 58);
-	color: white;
-	border-radius: 3px;
-	border-top: 1px solid rgba(255, 255, 255, .1);
-	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
-	padding-left: 20px;
-	padding-right: 20px;
-}
-
-.fun-hover ul li a:hover:after {
-	opacity: 1;
-	width: 20px;
-}
-
-.navbar-brand {
-	font-family: 'ZCOOL KuaiLe', cursive;
-	color: rgb(179, 37, 58);
-	font-size: 2rem;
-}
-
-.navbar-brand:hover {
-	color: red;
-}
-
-.nav-link:hover {
-	color: rgb(179, 37, 58);
-}
-
-.card {
-	background-color: black;
-	border: 2px solid black;
-}
-
-.icons-lg {
-	font-size: 1.5rem;
-}
-
-span.icons-lg:hover {
-	color: white;
-	text-decoration: none;
-}
-
-p.home-title {
-	font-size: 1.7rem;
-	font-family: 'ZCOOL KuaiLe', cursive;
+.register{
+	width: 20vw;
+	margin: 0 auto;
 }

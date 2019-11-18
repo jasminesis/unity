@@ -13,6 +13,8 @@
  *
  */
 
+
+
 @import url('https://fonts.googleapis.com/css?family=Nunito|ZCOOL+KuaiLe&display=swap');
 @import "bootstrap";
 @import "schedules";
@@ -21,3 +23,78 @@
 @import "freetimes";
 @import "rails_bootstrap_forms";
 @import "homes";
+
+body {
+	background-image: asset-url('red-bg.jpg');
+	background-size: auto;
+	color: white;
+	font-family: 'Nunito', sans-serif;
+}
+
+a {
+	color: white;
+	// color: black;
+}
+
+a:hover {
+	color: white;
+}
+
+
+.fun-hover ul li a {
+	border-top: 1px solid rgba(0, 0, 0, 0);
+	margin: 4px;
+}
+
+.fun-hover ul li a:after {
+	color: #f0a;
+	/* code for &raquo; */
+	display: block;
+	float: right;
+	opacity: 0;
+	overflow: hidden;
+	width: 0;
+}
+
+.fun-hover ul li a:hover {
+	background: rgb(179, 37, 58);
+	color: white;
+	border-radius: 3px;
+	border-top: 1px solid rgba(255, 255, 255, .1);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .2);
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.fun-hover ul li a:hover:after {
+	opacity: 1;
+	width: 20px;
+}
+
+.navbar-brand {
+	font-family: 'ZCOOL KuaiLe', cursive;
+	color: rgb(179, 37, 58);
+	font-size: 2rem;
+}
+
+.navbar-brand:hover {
+	color: red;
+}
+
+.nav-link:hover {
+	color: rgb(179, 37, 58);
+}
+
+.card {
+	background-color: black;
+	border: 2px solid black;
+}
+
+.icons-lg {
+	font-size: 1.5rem;
+}
+
+span.icons-lg:hover {
+	color: white;
+	text-decoration: none;
+}
