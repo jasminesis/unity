@@ -11,23 +11,23 @@ Schedule.create(event: "Pubg", start_time: Time.now(), user_id: 1)
 Schedule.create(event: "Pubg", start_time: Time.now(), user_id: 2)
 Schedule.create(event: "Pubg", start_time: Time.now(), user_id: 3)
 
-# User.create!([
-#   {email: "1test@gmail.com", username: "1testuser", password: "password", admin: false},
-#   {email: "2test@gmail.com", username: "2testuser", password: "password", admin: false},
-#   {email: "3test@gmail.com", username: "3testuser", password: "password", admin: false},
-#   {email: "4test@gmail.com", username: "4testuser", password: "password", admin: false},
-#   {email: "5test@gmail.com", username: "5testuser", password: "password", admin: false},
-#   {email: "6test@gmail.com", username: "6testuser", password: "password", admin: false},
-#   {email: "7test@gmail.com", username: "7testuser", password: "password", admin: false},
-#   {email: "8test@gmail.com", username: "8testuser", password: "password", admin: false},
-#   {email: "9test@gmail.com", username: "9testuser", password: "password", admin: false},
-#   {email: "10test@gmail.com", username: "10testuser", password: "password", admin: false},
-#   {email: "11test@gmail.com", username: "11testuser", password: "password", admin: false},
-#   {email: "12test@gmail.com", username: "12testuser", password: "password", admin: false},
-#   {email: "13test@gmail.com", username: "13testuser", password: "password", admin: false},
-#   {email: "14test@gmail.com", username: "14testuser", password: "password", admin: false},
-#   {email: "admin@gmail.com", username: "testadmin", password: "password", admin: true}
-# ])
+User.create!([
+  {email: "1test@gmail.com", username: "1testuser", password: "password", admin: false},
+  {email: "2test@gmail.com", username: "2testuser", password: "password", admin: false},
+  {email: "3test@gmail.com", username: "3testuser", password: "password", admin: false},
+  {email: "4test@gmail.com", username: "4testuser", password: "password", admin: false},
+  {email: "5test@gmail.com", username: "5testuser", password: "password", admin: false},
+  {email: "6test@gmail.com", username: "6testuser", password: "password", admin: false},
+  {email: "7test@gmail.com", username: "7testuser", password: "password", admin: false},
+  {email: "8test@gmail.com", username: "8testuser", password: "password", admin: false},
+  {email: "9test@gmail.com", username: "9testuser", password: "password", admin: false},
+  {email: "10test@gmail.com", username: "10testuser", password: "password", admin: false},
+  {email: "11test@gmail.com", username: "11testuser", password: "password", admin: false},
+  {email: "12test@gmail.com", username: "12testuser", password: "password", admin: false},
+  {email: "13test@gmail.com", username: "13testuser", password: "password", admin: false},
+  {email: "14test@gmail.com", username: "14testuser", password: "password", admin: false},
+  {email: "admin@gmail.com", username: "testadmin", password: "password", admin: true}
+])
 
 Game.create(name: "Fortnite", description: "The game sees 100 players land onto the same map and then take each other on, the last player standing wins.", image_url: "https://cdn.images.express.co.uk/img/dynamic/143/590x/Fortnite-event-1189982.jpg?r=1570993306539")
 Game.create(name: "RoBlox", description: "Roblox is essentially a vast library of mini-games that have been created by other people.", image_url: "https://cdn.vox-cdn.com/thumbor/lkE1JeL4S00R-OSTymR5hEXbo9I=/0x0:1920x821/1200x800/filters:focal(807x258:1113x564)/cdn.vox-cdn.com/uploads/chorus_image/image/64904047/roblox.0.png")
