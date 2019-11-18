@@ -22,6 +22,7 @@ class FreetimesController < ApplicationController
    end
 
   def create
+    @userfreetimes = Freetime.where("user_id= #{current_user.id}").pluck(:time)
     isduplicate = false
     if params[:freetime].blank?
       puts "blank"
