@@ -80,12 +80,16 @@ class GamesController < ApplicationController
     # @game = Game.add(game_params)
     # @game = Game.find(params[:id])
     @game_user = GamesUser.new(:user_id => current_user.id, :game_id => params[:id])
-
+    # check if already has it!
+    @relationship = GamesUser.where(user_id: current_user.id, game_id: params[:id])
+    if @relationship.length > 0
+    else
     if @game_user.save
       redirect_to games_path
     else
       redirect_to games_path
     end
+  end
   end
 
 
@@ -94,7 +98,9 @@ class GamesController < ApplicationController
     # @game = Game.find(params[:id])
     # @game_user = GamesUser.new(:user_id => current_user.id, :game_id => params[:id])
     @relationship = GamesUser.where(user_id: current_user.id, game_id: params[:id])
+    if @relationship.length > 0
     @relationship[0].destroy
+    end
     # render plain: @relationship.inspect
       respond_to do |format|
         format.html { redirect_to games_url }
