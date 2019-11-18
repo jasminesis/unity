@@ -20,8 +20,17 @@
 
 	.wday-6 {}
 
+	.has-events {
+		background: rgb(157, 27, 47);
+
+	}
+
 	.today {
-		background: rgb(179, 37, 58);
+		background: rgb(203, 33, 59);
+	}
+
+	.today:hover {
+		background: red;
 	}
 
 	.past {}
@@ -40,10 +49,13 @@
 
 	.current-month {}
 
-	.has-events {}
 
 	a {
 		color: white;
+	}
+
+	a:hover {
+		text-decoration: underline;
 	}
 
 	.calendar-title {
