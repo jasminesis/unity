@@ -23,20 +23,20 @@
 
 
 
-<% @user.freetime.order("time ASC").each do |f| %>
-<% @myfreetime.each do |myfree| %>
-
-<%-# Checks if our freetimes are at the same time, and that they are in the future -%>
-
-<% if f.time.in_time_zone("Singapore") > DateTime.current.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
-
 <div class="col-8 p-2" style="margin: 0 auto; background-color: #111111; border-radius: 10px">
 
 	<h1 class="display-4 pt-2">Free times in common</h1>
 	<div class="col-12 d-flex flex-wrap">
+		<% @user.freetime.order("time ASC").each do |f| %>
+		<% @myfreetime.each do |myfree| %>
+
+		<%-# Checks if our freetimes are at the same time, and that they are in the future -%>
+
+		<% if f.time.in_time_zone("Singapore") > DateTime.current.in_time_zone("Singapore") && f.time.in_time_zone("Singapore") == myfree.time %>
 
 
-		<div class="btn btn-outline-dark btn-block justify-content-center my-3 free-time-card m-2">
+
+		<div class="btn btn-outline-dark btn-block justify-content-center my-3 free-time-card">
 			<%= link_to("#{@user_id}/schedules/new?date=#{f.time.in_time_zone("Singapore")}") do %>
 
 			<%= f.time.in_time_zone("Singapore").strftime("%A, %d %B %Y, %I %p") %>
@@ -47,6 +47,8 @@
 		<% end %>
 		<% end %>
 		<% end %>
+
 	</div>
+	<%= link_to 'Add free time', new_freetime_path ,({:class => "btn btn-outline-light mb-3"})%>
 	<% end %>
 	<% end %>
