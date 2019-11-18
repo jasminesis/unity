@@ -30,4 +30,5 @@ function refresh() {
     request.send();
 }
 
+setTimeout(refresh, 1000)
 setInterval(refresh, 30000)
