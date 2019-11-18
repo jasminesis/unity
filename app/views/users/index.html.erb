@@ -1,131 +1,131 @@
 <h1>List of Users</h1>
 <%= bootstrap_form_for(users_path, method: :get) do%>
-	<%= text_field_tag(:search, params[:search], class: "mb-3 form-rounded")%>
-	<%= submit_tag ("Search"), class: "btn btn-lg btn-outline-light mb-1 btn-sm" %>
+<%= text_field_tag(:search, params[:search], class: "mb-3 form-rounded")%>
+<%= submit_tag ("Search"), class: "btn btn-lg btn-outline-light mb-1 btn-sm" %>
 <% end %>
 
 
 <% if @params %>
-	<div class="table-responsive">
-		<table class="table user-list">
-			<thead>
-				<tr>
+<div class="table-responsive">
+	<table class="table user-list">
+		<thead>
+			<tr>
 
 				<th width="2px"><span>&nbsp;</span></th>
 				<th class="text-center" width="20px"><span>User</span></th>
 				<th class="text-center" width="2px"><span>Online</span></th>
-				<th class="text-center" ><span>Joined</span></th>
+				<th class="text-center"><span>Joined</span></th>
 				<th class="text-center"><span>Status</span></th>
 				<th class="text-center"><span>Liked Games</span></th>
 
-				</tr>
-			</thead>
-			<tbody>
-				<% @users.order("online_status DESC").each do |user| %>
-				<tr>
-					<td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.order("online_status DESC").each do |user| %>
+			<tr>
+				<td>
 
 					<%= image_tag 'default-avatar.png', class: "mr-2", width: "35px" %>
-					</td>
-					<td class="text-left">
+				</td>
+				<td class="text-left">
 					<%= link_to user.username, user_path(user)%>
 
-					</td>
-					<td>
+				</td>
+				<td>
 					<% if user.online_status == 'true' %>
 					<div class="online"></div>
-				<% end %>
-					</td>
-					<td><%= user.created_at %></td>
-					<td class="text-center">
-						<%  if user_signed_in?%>
-						<% @friends.each do |friend| %>
-						<%  if friend.id == user.id%>
-						<span class="label label-default">Friends</span>
+					<% end %>
+				</td>
+				<td><%= user.created_at.strftime("%Z") %></td>
+				<td class="text-center">
+					<%  if user_signed_in?%>
+					<% @friends.each do |friend| %>
+					<%  if friend.id == user.id%>
+					<span class="label label-default">Friends</span>
 
-						<% end %>
-						<% end %>
-						<% end %>
-					</td>
+					<% end %>
+					<% end %>
+					<% end %>
+				</td>
 
-					<td style="max-width:200px">
+				<td style="max-width:200px">
 					<% user.games.each do |gameuser| %>
-							<span class="badge badge-success ml-n3 mb-1" style="font-size: 0.7em;">
-							<% if  @mygames.include? gameuser.id %>
-							<%= gameuser.name %> ❤️</a></span>
-							<% else %>
-							<%= gameuser.name %></a></span>
-							<% end %>
+					<span class="badge badge-success ml-n3 mb-1" style="font-size: 0.7em;">
+						<% if  @mygames.include? gameuser.id %>
+						<%= gameuser.name %> ❤️</a></span>
+					<% else %>
+					<%= gameuser.name %></a></span>
+					<% end %>
 					<% end %>
 
 
 
-				</tr>
-				<% end %>
+			</tr>
+			<% end %>
 
 
-			</tbody>
-		</table>
-	</div>
+		</tbody>
+	</table>
+</div>
 <% else %>
-	<div class="table-responsive">
-		<table class="table user-list">
-			<thead>
-				<tr>
+<div class="table-responsive">
+	<table class="table user-list">
+		<thead>
+			<tr>
 
 				<th width="2px"><span>&nbsp;</span></th>
 				<th class="text-center" width="20px"><span>User</span></th>
 				<th class="text-center" width="2px"><span>Online</span></th>
-				<th class="text-center" ><span>Joined</span></th>
+				<th class="text-center"><span>Joined</span></th>
 				<th class="text-center"><span>Status</span></th>
 				<th class="text-center"><span>Liked Games</span></th>
 
-				</tr>
-			</thead>
-			<tbody>
-				<% @users.order("online_status DESC").each do |user| %>
-				<tr>
-					<td>
+			</tr>
+		</thead>
+		<tbody>
+			<% @users.order("online_status DESC").each do |user| %>
+			<tr>
+				<td>
 
 					<%= image_tag 'default-avatar.png', class: "mr-2", width: "35px" %>
-					</td>
-					<td class="text-left">
+				</td>
+				<td class="text-left">
 					<%= link_to user.username, user_path(user)%>
 
-					</td>
-					<td>
+				</td>
+				<td>
 					<% if user.online_status == 'true' %>
 					<div class="online"></div>
-				<% end %>
-					</td>
-					<td><%= user.created_at %></td>
-					<td class="text-center">
-						<%  if user_signed_in?%>
-						<% @friends.each do |friend| %>
-						<%  if friend.id == user.id%>
-						<span class="label label-default">Friends</span>
-						<% end %>
-						<% end %>
-						<% end %>
-					</td>
+					<% end %>
+				</td>
+				<td><%= user.created_at.strftime("%-d %b %Y") %></td>
+				<td class="text-center">
+					<%  if user_signed_in?%>
+					<% @friends.each do |friend| %>
+					<%  if friend.id == user.id%>
+					<span class="label label-default">Friends</span>
+					<% end %>
+					<% end %>
+					<% end %>
+				</td>
 
-					<td style="max-width:200px">
+				<td style="max-width:200px">
 					<% user.games.each do |gameuser| %>
-							<button class="btn btn-rounded btn-success btn-sm ml-n3 mb-1" style="font-size: 0.7em;">
-							<% if  @mygames.include? gameuser.id %>
-							<%= gameuser.name %> ❤️</a></button>
-							<% else %>
-							<%= gameuser.name %></a></button>
-							<% end %>
+					<button class="btn btn-rounded btn-success btn-sm ml-n3 mb-1" style="font-size: 0.7em;">
+						<% if  @mygames.include? gameuser.id %>
+						<%= gameuser.name %> ❤️</a></button>
+					<% else %>
+					<%= gameuser.name %></a></button>
+					<% end %>
 					<% end %>
 
 
 
-				</tr>
-				<% end %>
+			</tr>
+			<% end %>
 
 
-			</tbody>
-		</table>
-	</div>
+		</tbody>
+	</table>
+</div>
 <% end %>
