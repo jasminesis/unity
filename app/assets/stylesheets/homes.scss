@@ -1,444 +1,450 @@
 // Place all the styles related to the homes controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-
-
 @import url('https://fonts.googleapis.com/css?family=Poppins&display=swap');
-
-
-
-
 p.home-title {
-	font-size: 1.7rem;
-	font-family: 'ZCOOL KuaiLe', cursive;
+    font-size: 1.7rem;
+    font-family: 'ZCOOL KuaiLe', cursive;
 }
 
 // <----------------- POST LOGIN ----------------->
-
-.homeJumbo{
-	position: relative;
-	background: linear-gradient(to right, #EC0011 0%, #4D0009 50%, #EC0011 100%);
-	background-size: 400%;
-	border-radius: 3px;
-	animation: buttonpulse 20s linear infinite;
-	overflow: hidden;
+.homeJumbo {
+    position: relative;
+    background: linear-gradient(to right, #EC0011 0%, #4D0009 50%, #EC0011 100%);
+    background-size: 400%;
+    border-radius: 3px;
+    animation: buttonpulse 20s linear infinite;
+    overflow: hidden;
 }
 
 .pulsation span {
-	position: absolute;
-	display: block;
+    position: absolute;
+    display: block;
 }
 
 .pulsation span:nth-child(1) {
-	top: 0;
-	left: -30%;
-	width: 30%;
-	height: 4px;
-	background: linear-gradient(90deg, transparent, white);
+    top: 0;
+    left: -30%;
+    width: 30%;
+    height: 4px;
+    background: linear-gradient(90deg, transparent, white);
 }
 
 .pulsation:hover span:nth-child(1) {
-	animation: kfleft 2s linear infinite;
-	transition: 1s;
-	animation-delay: 0.8s;
+    animation: kfleft 2s linear infinite;
+    transition: 1s;
+    animation-delay: 0.8s;
 }
 
 .pulsation span:nth-child(2) {
-	top: -100%;
-	right: 0;
-	width: 4px;
-	height: 30%;
-	background: linear-gradient(180deg, transparent, white);
+    top: -100%;
+    right: 0;
+    width: 4px;
+    height: 30%;
+    background: linear-gradient(180deg, transparent, white);
 }
 
 .pulsation:hover span:nth-child(2) {
-	animation: kftop 2s linear infinite;
-	transition: 1s;
+    animation: kftop 2s linear infinite;
+    transition: 1s;
 }
 
 .pulsation span:nth-child(3) {
-	bottom: 0;
-	right: -30%;
-	width: 30%;
-	height: 4px;
-	background: linear-gradient(270deg, transparent, white);
+    bottom: 0;
+    right: -30%;
+    width: 30%;
+    height: 4px;
+    background: linear-gradient(270deg, transparent, white);
 }
 
 .pulsation:hover span:nth-child(3) {
-	animation: kfright 2s linear infinite;
-	transition: 1s;
-	animation-delay: 0.8s;
+    animation: kfright 2s linear infinite;
+    transition: 1s;
+    animation-delay: 0.8s;
 }
 
 .pulsation span:nth-child(4) {
-	bottom: -100%;
-	left: 0;
-	width: 4px;
-	height: 30%;
-	background: linear-gradient(360deg, transparent, white);
+    bottom: -100%;
+    left: 0;
+    width: 4px;
+    height: 30%;
+    background: linear-gradient(360deg, transparent, white);
 }
 
 .pulsation:hover span:nth-child(4) {
-	animation: kfbottom 2s linear infinite;
-	transition: 1s;
+    animation: kfbottom 2s linear infinite;
+    transition: 1s;
 }
 
 @keyframes kfleft {
-	40% {
-		left: 100%;
-	}
-
-	100% {
-		left: 100%;
-	}
+    40% {
+        left: 100%;
+    }
+    100% {
+        left: 100%;
+    }
 }
 
 @keyframes kftop {
-	40% {
-		top: 100%;
-	}
-
-	100% {
-		top: 100%;
-	}
+    40% {
+        top: 100%;
+    }
+    100% {
+        top: 100%;
+    }
 }
 
 @keyframes kfright {
-	40% {
-		right: 100%;
-	}
-
-	100% {
-		right: 100%;
-	}
+    40% {
+        right: 100%;
+    }
+    100% {
+        right: 100%;
+    }
 }
 
 @keyframes kfbottom {
-	40% {
-		bottom: 100%;
-	}
-
-	100% {
-		bottom: 100%;
-	}
+    40% {
+        bottom: 100%;
+    }
+    100% {
+        bottom: 100%;
+    }
 }
 
-
 .mybtn {
-	font-weight: bold;
-	font-size: 20px;
-	color: #FFF;
-	text-align: center;
-	text-decoration: none;
-	box-sizing: border-box;
-	background: linear-gradient(90deg, #03A9F4, #F441A5, #FFEB3B, #03A9F4);
-	background-size: 400%;
-	border-radius: 5px;
-	line-height: 50px;
-	z-index: 2;
+    font-weight: bold;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, #03A9F4, #F441A5, #FFEB3B, #03A9F4);
+    background-size: 400%;
+    border-radius: 5px;
+    line-height: 50px;
+    z-index: 2;
 }
 
 a {
-	text-decoration: none;
-	z-index: 2;
+    text-decoration: none;
+    z-index: 2;
 }
 
 .mybtn:hover {
-	animation: buttonpulse 10s linear infinite;
-	text-decoration: none;
+    animation: buttonpulse 10s linear infinite;
+    text-decoration: none;
 }
 
 .mybtn:before {
-	content: "";
-	position: absolute;
-	top: -1px;
-	bottom: -1px;
-	left: -1px;
-	right: -1px;
-	background: linear-gradient(90deg, #03A9F4, #F441A5, #FFEB3B, #03A9F4);
-	background-size: 400%;
-	border-radius: 1px;
-	z-index: 1;
-	opacity: 0;
-	transition: 0.7s;
+    content: "";
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    background: linear-gradient(90deg, #03A9F4, #F441A5, #FFEB3B, #03A9F4);
+    background-size: 400%;
+    border-radius: 1px;
+    z-index: 1;
+    opacity: 0;
+    transition: 0.7s;
 }
 
 .mybtn:hover:before {
-	animation: buttonpulse 10s linear infinite;
-	filter: blur(30px);
-	opacity: 0.6;
+    animation: buttonpulse 10s linear infinite;
+    filter: blur(30px);
+    opacity: 0.6;
 }
 
 @keyframes buttonpulse {
-	0% {
-		background-position: 0%;
-	}
-
-	100% {
-		background-position: 400%;
-	}
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
 }
 
 // <----------------- PRE LOGIN ----------------->
-@keyframes spin
-{
-	0%
-	{
-		transform: rotate(0deg);
-	}
-	100%
-	{
-		transform: rotate(360deg);
-	}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
 }
 
-@keyframes spin2
-{
-	0%
-	{
-		transform: rotate(360deg);
-	}
-	100%
-	{
-		transform: rotate(0deg);
-	}
+@keyframes spin2 {
+    0% {
+        transform: rotate(360deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
 }
 
-a:hover{
-	text-decoration: none;
+a:hover {
+    text-decoration: none;
 }
 
-#loginBubble{
-	display: block;
-	margin: 0 auto;
+#loginBubble {
+    display: block;
+    margin: 0 auto;
 }
 
 // <----------------- Signup ----------------->
-.bubbles{
-	position: relative;
-	width: 10vw;
-	height: 10vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.bubbles {
+    position: relative;
+    width: 10vw;
+    height: 10vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.bubbles span:nth-child(1){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 102%;
-	height: 102%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin 9s linear infinite;
+.bubbles span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 102%;
+    border: 2px solid white;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+    transition: 0.5s;
+    animation: spin 9s linear infinite;
 }
 
-.bubbles:hover span:nth-child(1){
-	border: none;
-	background: rgba(180,0,15,0.7);
+.bubbles:hover span:nth-child(1) {
+    border: none;
+    background: rgba(180, 0, 15, 0.7);
 }
 
-.bubbles span:nth-child(2){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 98%;
-	height: 98%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin2 7s linear infinite;
+.bubbles span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 98%;
+    border: 2px solid white;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+    transition: 0.5s;
+    animation: spin2 7s linear infinite;
 }
 
-.bubbles:hover span:nth-child(2){
-	border: none;
-	background: rgba(200,15,12,0.6);
+.bubbles:hover span:nth-child(2) {
+    border: none;
+    background: rgba(200, 15, 12, 0.6);
 }
 
-.bubbles span:nth-child(3){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin 5s linear infinite;
+.bubbles span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+    transition: 0.5s;
+    animation: spin 5s linear infinite;
 }
 
-.bubbles:hover span:nth-child(3){
-	border: none;
-	background: rgba(160,0,12,0.8);
+.bubbles:hover span:nth-child(3) {
+    border: none;
+    background: rgba(160, 0, 12, 0.8);
 }
 
-
-.bubblesContent{
-	color: white;
-	z-index: 1;
+.bubblesContent {
+    color: white;
+    z-index: 1;
 }
 
-.bubblesContent h2{
-	font-size: 1.5vw;
+.bubblesContent h2 {
+    font-size: 1.5vw;
 }
 
 // <----------------- Login ----------------->
-
-.bubbles2{
-	position: relative;
-	width: 5vw;
-	height: 5vw;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.bubbles2 {
+    position: relative;
+    width: 5vw;
+    height: 5vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.bubbles2 span:nth-child(1){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 102%;
-	height: 102%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin 9s linear infinite;
+.bubbles2 span:nth-child(1) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 102%;
+    height: 102%;
+    border: 2px solid white;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+    transition: 0.5s;
+    animation: spin 9s linear infinite;
 }
 
-.bubbles2:hover span:nth-child(1){
-	border: none;
-	background: #4989E3;
-	opacity: 0.6;
+.bubbles2:hover span:nth-child(1) {
+    border: none;
+    background: #4989E3;
+    opacity: 0.6;
 }
 
-.bubbles2 span:nth-child(2){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 98%;
-	height: 98%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin2 7s linear infinite;
+.bubbles2 span:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 98%;
+    height: 98%;
+    border: 2px solid white;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+    transition: 0.5s;
+    animation: spin2 7s linear infinite;
 }
 
-.bubbles2:hover span:nth-child(2){
-	border: none;
-	background: #4989E3;
-	opacity: 0.8;
+.bubbles2:hover span:nth-child(2) {
+    border: none;
+    background: #4989E3;
+    opacity: 0.8;
 }
 
-.bubbles2 span:nth-child(3){
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	border: 2px solid white;
-	border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
-	transition: 0.5s;
-	animation: spin 5s linear infinite;
+.bubbles2 span:nth-child(3) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 2px solid white;
+    border-radius: 38% 62% 63% 37% / 41% 44% 56% 56%;
+    transition: 0.5s;
+    animation: spin 5s linear infinite;
 }
 
-.bubbles2:hover span:nth-child(3){
-	border: none;
-	background: #4989E3;
+.bubbles2:hover span:nth-child(3) {
+    border: none;
+    background: #4989E3;
 }
 
-
-.bubblesContent2{
-	color: white;
-	z-index: 1;
+.bubblesContent2 {
+    color: white;
+    z-index: 1;
 }
 
-.bubblesContent2 h2{
-	font-size: .8vw;
+.bubblesContent2 h2 {
+    font-size: .8vw;
 }
-
-
-
 
 // <--------------- CARD --------------->
-.myCard{
-	font-family: 'Poppins', sans-serif;
-	position: relative;
-	background: #1E1E1E;
-	color: white;
-	width: 25vw;
-	height: 35vw;
-	margin: 0 auto;
-	box-shadow: 0 15px 60px rgba(0,0,0,.8);
-	margin-bottom: 15px;
+.myCard {
+    font-family: 'Poppins', sans-serif;
+    position: relative;
+    background: #1E1E1E;
+    color: white;
+    width: 25vw;
+    height: 35vw;
+    margin: 0 auto;
+    box-shadow: 0 15px 60px rgba(0, 0, 0, .8);
+    margin-bottom: 15px;
 }
 
-.myCard .face{
-	position: absolute;
-	bottom: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.myCard .face {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.myCard .face.face1{
-	box-sizing: border-box;
-	padding: 20px;
+.myCard .face.face1 {
+    box-sizing: border-box;
+    padding: 20px;
 }
 
-.myCard .face.face2{
-	background: #111;
-	transition: 0.5s;
+.myCard .face.face2 {
+    background: #111;
+    transition: 0.5s;
 }
 
-.myCard .face.face2 h2{
-	margin: 0;
-	padding: 0;
-	font-size: 5em;
-	color: #FFF;
-	transition: 0.5s;
+.myCard .face.face2 h2 {
+    margin: 0;
+    padding: 0;
+    font-size: 5em;
+    color: #FFF;
+    transition: 0.5s;
 }
 
-.myCard .face.face2:before{
-	content: '';
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 50%;
-	height: 100%;
-	background: rgba(255,255,255,0.1);
+.myCard .face.face2:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
 }
 
-.myCard:hover .face.face2{
-	height: 10%;
-}
-.myCard:hover .face.face2 h2{
-	font-size: 2em;
+.myCard:hover .face.face2 {
+    height: 10%;
 }
 
-.myCard:nth-child(1) .face.face2{
-	background: linear-gradient(45deg, #3503ad, #f7308c);
+.myCard:hover .face.face2 h2 {
+    font-size: 2em;
 }
 
-.myCard:nth-child(2) .face.face2{
-	background: linear-gradient(45deg, #47EDE4, #A8F02C);
+.myCard:nth-child(1) .face.face2 {
+    background: linear-gradient(45deg, #3503ad, #f7308c);
 }
 
-.myCard:nth-child(3) .face.face2{
-	background: linear-gradient(45deg, #DFEF44, #E9541F);
-}
-.myCard:nth-child(4) .face.face2{
-	background: linear-gradient(45deg, #7AE741, #644BE2);
-}
-.myCard:nth-child(5) .face.face2{
-	background: linear-gradient(45deg, #E02B6B, #64D8E3);
+.myCard:nth-child(2) .face.face2 {
+    background: linear-gradient(45deg, #47EDE4, #A8F02C);
 }
 
-.register{
-	width: 20vw;
-	margin: 0 auto;
+.myCard:nth-child(3) .face.face2 {
+    background: linear-gradient(45deg, #DFEF44, #E9541F);
+}
+
+.myCard:nth-child(4) .face.face2 {
+    background: linear-gradient(45deg, #7AE741, #644BE2);
+}
+
+.myCard:nth-child(5) .face.face2 {
+    background: linear-gradient(45deg, #E02B6B, #64D8E3);
+}
+
+.register {
+    width: 20vw;
+    margin: 0 auto;
+}
+
+// davids changes
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+
+/* Track */
+
+ ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+}
+
+
+/* Handle */
+
+ ::-webkit-scrollbar-thumb {
+    background: red;
+    border-radius: 10px;
+}
+
+
+/* Handle on hover */
+
+ ::-webkit-scrollbar-thumb:hover {
+    background: #b30000;
 }
