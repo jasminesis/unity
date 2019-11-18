@@ -5,11 +5,17 @@ class FriendsController < ApplicationController
     @current_id = current_user.id
     @user_id = params["id"]
 
+    if Friend.where("(user_id = ? AND friend_user_id = ?) OR (user_id = ? AND friend_user_id = ?)", @user_id, @current_id, @current_id, @user_id).length >0
+      puts "its true!!!"
+      redirect_to users_path
+      return
+    end
+
     @relationship = Friend.new(:user_id => @current_id, :friend_user_id => @user_id, :status => 'added')
     if @relationship.save
-      redirect_to root_path
+      redirect_to users_path
     else
-      redirect_to root_path
+      redirect_to users_path
     end
   end
 
@@ -20,6 +26,6 @@ class FriendsController < ApplicationController
     @user_id = params["id"]
     @relationship = Friend.where("(user_id = ? AND friend_user_id = ?) OR (user_id = ? AND friend_user_id = ?)", @user_id, @current_id, @current_id, @user_id)
     @relationship[0].destroy
-    redirect_to root_path
+    redirect_to users_path
   end
 end
