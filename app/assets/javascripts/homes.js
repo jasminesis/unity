@@ -2,7 +2,7 @@ function refresh() {
     var div = document.getElementById("friendDiv")
     var child = div.querySelectorAll("a")
     var request = new XMLHttpRequest();
-    var url = `/homes/api`;
+    var url = "/homes/api";
     request.open("GET", url);
     request.setRequestHeader(
         "Content-Type",
