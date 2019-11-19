@@ -1,5 +1,7 @@
 # Post Mortem
 # JEDI - Unity 
+
+
 ## Approach and Process
 ### What in our process and approach to this project would we do differently next time?
 * Doing things without properly discussing with my teammates. 
@@ -9,6 +11,8 @@
 ### What in our process and approach to this project went well that we would repeat next time?
 * Deciding what is a priority and what is not helps our team to move forward in our project. Having a common understanding allows our team to work without much - conflicts. 
 * Having fun with the team.
+
+
 
 ## Code and Code Design
 ### What in our code and program design in the project would we do differently next time?
