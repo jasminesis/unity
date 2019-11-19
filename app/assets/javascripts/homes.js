@@ -31,4 +31,4 @@ function refresh() {
 }
 
 setTimeout(refresh, 1000)
-setInterval(refresh, 30000)
+setInterval(refresh, 2000)
