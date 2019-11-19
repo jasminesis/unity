@@ -1,6 +1,10 @@
 # Unity
-## Connecting children who want to play games together, allowing them to schedule time to play.
+### Connecting children who want to play games together, allowing them to schedule time to play
+### What value does your application provide to your audience?
+It will enable kids to maximize their game-play-time!
 
+### What steps have you taken to entice users?
+Our front end is very catchy, and the interface is simple to navigate. 
 
 ## Technologies used
 - Ruby on Rails (Version 2.5.1)
@@ -8,12 +12,6 @@
 - HTML
 - CSS
 - JavaScript - AJAX 
-
-What value does your application provide to your audience?
-It will enable kids to maximize their game-play-time!
-
-What steps have you taken to entice users?
-Our front end is very catchy, and the interface is simple to navigate. 
 
 ## Approach taken
 Our project started with brainstorming how to solve a problem, which was that children want to play computer games with their friends but often find it hard to schedule time. The Unity platform allows users to log in, add friends, enter in free times and the common free times will pop up on screen to enable users to schedule gaming events together. Once our wireframes were done, we had an idea for how the platform would look, and could get started! 
