@@ -35,6 +35,9 @@ rails db:seed
 Kids aged 6-11. They have a few hours a week in which they can play video games, but have difficulty in scheduling with their friends. For example, they may have time at 9pm tonight to play PUBG, but are not sure if their friends are also free- this leads them to calling each of their friends to see if they are free. By having a central sheduling app, they can coordinate their game-play-time.
 
 ## Link to your wireframes – sketches of major views / interfaces for your application
+![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe1.png)
+![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe2.png)
+![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe3.png)
 
 ## Descriptions of any unsolved problems or major hurdles your team had to overcome
 A lot of gems are outdated or not well maintained. 
