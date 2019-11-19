@@ -1,4 +1,6 @@
 # Unity
+## Connecting children who want to play games together, allowing them to schedule time to play.
+
 
 ## Technologies used
 - Ruby on Rails (Version 2.5.1)
@@ -7,13 +9,10 @@
 - CSS
 - JavaScript - AJAX 
 
-What is your application (elevator pitch, ideally in one sentence) 
-Connecting children who want to play games together, allowing them to schedule 
-
 What value does your application provide to your audience?
 It will enable kids to maximize their game-play-time!
 
-What steps have you taken to entice users? (user experience, a fancy frontend, trying out functionality before being forced to signup)
+What steps have you taken to entice users?
 Our front end is very catchy, and the interface is simple to navigate. 
 
 ## Approach taken
@@ -40,7 +39,7 @@ Kids aged 6-11. They have a few hours a week in which they can play video games,
 ![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe3.png)
 
 ## Descriptions of any unsolved problems or major hurdles your team had to overcome
-A lot of gems are outdated or not well maintained. 
-DOM manipulation and AJAX were much more difficult to do in Rails.
-We had some issues with conflicts in GIT, but were able to resolve them. We learned to seperate out feature workflow, and communicate better to avoid conflicts.
+- A lot of gems are outdated or not well maintained. 
+- DOM manipulation and AJAX were much more difficult to do in Rails.
+- We had some issues with conflicts in GIT, but were able to resolve them. We learned to separate out feature workflow, and communicate better to avoid conflicts.
 
