@@ -44,15 +44,6 @@ Kids aged 6-11. They have a few hours a week in which they can play video games,
 
 
 ## Link to your wireframes – sketches of major views / interfaces for your application
-
-
-## Descriptions of any unsolved problems or major hurdles your team had to overcome
-A lot of gems are outdated or not well maintained. 
-DOM manipulation and AJAX were much more difficult to do in Rails.
-We had some issues with conflicts in GIT, but were able to resolve them. We learned to seperate out feature workflow, and communicate better to avoid conflicts.
-=======
-
-## Link to your wireframes – sketches of major views / interfaces for your application
 ![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe1.png)
 ![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe2.png)
 ![wireframe](https://github.com/jasminesis/unity/blob/master/docs/Wireframe3.png)
